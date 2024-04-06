@@ -1,13 +1,13 @@
+/* Base styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
- 
 }
 
 .container {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%; /* Adjust width for smaller screens */
+    max-width: 1200px; /* Limit maximum width for larger screens */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,10 +15,10 @@ body {
 
 footer {
     background-color: #f2f2f2;
-    height:55px;
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 55px;
+    width: 100%; /* Adjust width for smaller screens */
+    max-width: 1200px; /* Limit maximum width for larger screens */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +53,7 @@ header {
 }
 
 .sections > div {
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
 .auth-buttons {
@@ -80,7 +80,7 @@ button:hover {
 .head-down {
     display: flex;
     flex-direction: row;
-    align-items: flex-end; 
+    align-items: flex-end;
     background-color: black;
     padding: 10px;
 }
@@ -92,7 +92,6 @@ button:hover {
     margin-left: auto;
 }
 
-
 .head-down-down {
     display: flex;
     justify-content: space-between;
@@ -101,6 +100,8 @@ button:hover {
 
 .head-down-down .btns {
     display: flex;
+    padding: 10px;
+    gap: 5px;
     align-items: center; /* Align buttons vertically */
 }
 
@@ -113,7 +114,8 @@ button:hover {
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: rgb(190, 231, 190);
 }
 
@@ -127,7 +129,7 @@ button:hover {
     position: absolute;
     background-color: #f1f1f1;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -144,4 +146,45 @@ button:hover {
 
 .show {
     display: block;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .mainhead {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    .sections {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        margin-top: 10px; /* Adjust margin for better spacing */
+    }
+
+    .auth-buttons,
+    .sections > div {
+        margin-left: 0; /* Remove left margin for better alignment on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 5px; /* Further reduce padding for smaller screens */
+    }
+
+    .footer-content,
+    .auth-buttons button {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+
+    .head-down-down .btns {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 5px; /* Add gap between buttons for better spacing */
+    }
+
+    .dropbtn {
+        font-size: 13px; /* Decrease font size for smaller screens */
+    }
 }
