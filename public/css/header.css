@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+ 
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer {
+    background-color: #f2f2f2;
+    height:55px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.mainhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-head img {
+    height: 25px;
+}
+
+.sections {
+    display: flex;
+    align-items: center;
+}
+
+.sections > div {
+    margin-left: 10px; 
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+.auth-buttons > div {
+    margin-left: 10px; /* Adjust margin between buttons */
+}
+
+.auth-buttons button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #629bd8;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.head-down {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end; 
+    background-color: black;
+    padding: 10px;
+}
+
+.content {
+    border: 2px solid white;
+    color: white;
+    padding: 5px;
+    margin-left: auto;
+}
+
+
+.head-down-down {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(190, 231, 190);
+}
+
+.head-down-down .btns {
+    display: flex;
+    align-items: center; /* Align buttons vertically */
+}
+
+.dropbtn {
+    background-color: rgb(190, 231, 190);
+    color: rgb(39, 34, 34);
+    padding: 6px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(190, 231, 190);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
