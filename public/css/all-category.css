@@ -1,0 +1,243 @@
+.container-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%; /* Adjusted width to 90% */
+    margin-top: 5%;
+    padding-left: 2%;
+    gap: 1%;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align items to the start line */
+    background-color: #bebaba;
+    padding: 5%; /* Added padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    border-radius: 20px;
+}
+
+
+.h2 {
+    color: #333;
+    margin-bottom: 10px; /* Added margin bottom */
+}
+
+.field-list {
+    list-style: none;
+    color: #2c2a2a;
+    padding: 0;
+}
+
+.field-list li {
+    margin-bottom: 10px;
+    transition: font-weight 0.3s, color 0.3s; /* Added transition for smoother effect */
+}
+
+.field-list li:hover {
+    font-weight: bold; /* Increase font weight on hover */
+    color: #333; /* Change text color on hover */
+}
+.field-list li.hidden {
+    display: none; /* Hide list items with the 'hidden' class */
+}
+
+.arrow {
+    font-style: normal;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.left {
+    transform: rotate(180deg); /* Rotate the left arrow */
+}
+
+.list-item {
+    display: none; /* Hide all list items initially */
+}
+
+.visible {
+    display: inline-block; /* Display list items */
+}
+
+.hidden {
+    display: none;
+}
+
+.arrow {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.show-more {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Added margin top */
+}
+
+.show-more:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the language list */
+.language-list {
+    list-style: none;
+    padding: 0;
+}
+
+.language-list li {
+    margin-bottom: 10px;
+}
+
+/* Style for the duration list */
+.duration-list, .study-pace-list {
+    list-style: none;
+    padding: 0;
+}
+
+.duration-list li, .study-pace-list li {
+    margin-bottom: 10px;
+}
+
+
+.study-format-list {
+    list-style: none;
+    padding: 0;
+}
+
+.study-format-list li {
+    margin-bottom: 10px;
+}
+
+.right-panel {
+    flex: 3; /* Adjusted flex value to make it twice as big as the left panel */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Added padding */
+    border-radius: 20px;
+    background-color: #bebaba;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+}
+
+.list {
+    display: flex;
+    margin: 5px;
+    gap: 3%;
+    align-items: center;
+}
+
+.list button {
+    border-radius: 7px;
+    border: solid 1px white;
+    background-color: white;
+    font-size: 15px;
+    /* Font size */
+    padding: 5px 9px;
+}
+
+.arrow {
+    font-style: normal;
+    /* Reset font-style to ensure ">" is displayed */
+    font-size: 20px;
+    /* Adjust font size */
+    color: #333;
+    /* Adjust color */
+}
+
+.recommendation {
+    margin-top: 2%;
+    text-align: right;
+}
+
+.recommendation a {
+    color: black;
+}
+
+.outer-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 4%;
+
+}
+.box-container-1 {
+    background-color: white;
+    width: 90%;
+    height: auto;
+    margin-top: 2%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Center items horizontally */
+}
+
+.boxs-s {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 2%;
+    border-radius: 30px;
+}
+
+.box1 {
+    flex: 1;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+.box1 img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    border-radius: 20px;
+}
+
+.box2 {
+    flex: 3;
+    background-color: white;
+    padding: 2%; /* Changed to padding instead of padding-left */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.location {
+    display: flex;
+    gap: 1%;
+    align-items: center;
+}
+
+.circle {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(56, 55, 55);
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box2 p {
+    color: rgb(73, 69, 69);
+}

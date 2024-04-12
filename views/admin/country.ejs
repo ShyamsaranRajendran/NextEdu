@@ -1,0 +1,37 @@
+<%- include('../layouts/adminheader') %>
+
+<link rel="stylesheet" href="/css/category-sty.css">
+<br><br>
+<div class="container2">
+    <h2 class="country-title">Countries</h2>
+    <br>
+    <br>
+    <a href="/admin/countries/add-country" class="btn btn-primary">Add a new country</a>
+    <br><br>
+    <table class="table table-striped sorting">
+        <thead>
+            <tr class="home">
+                <th>Title</th>
+                <th>Description</th>
+                <th>Time</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% country.forEach(function(con) { %>
+                <tr id="id_<%= con._id %>" class="<%= con.slug %>">
+                    <td><%= con.title %></td>
+                    <td><%= con.desc %></td>
+                    <td><%= con.time %></td>
+                    <td><img src="/<%= con.image %>" alt="country Image" class="country-image"></td>
+                    <td><a href="/admin/countries/edit-country/<%= con.slug %>">Edit</a></td>
+                    <td><a class="confirmDeletion" href="/admin/countries/delete-country/<%= con._id %>">Delete</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<br><br>
+<%- include('../layouts/footer') %>

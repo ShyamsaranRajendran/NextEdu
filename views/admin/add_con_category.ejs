@@ -1,0 +1,136 @@
+<%- include('../layouts/adminContentHeader') %>
+
+<link rel="stylesheet" href="/css/add_program-sty.css">
+<a href="/admin/category/content" class="btn btn-primary">Back to all the program</a>
+<div class="container1">
+    <h2 class="page-title">Add a category with content</h2>
+    <a href="/admin/category/content" class="btn btn-primary">Back to all the program</a>
+    <form id="categoryForm" action="/admin/category/content/add-con-category" method="POST" enctype="multipart/form-data">
+       
+        <div class="form-group">
+            <label for="university">University:</label>
+            <input type="text" id="university" name="university" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="programs">Program:</label>
+            <select id="program" name="programs" class="form-control" required>
+                <% program.forEach(function(prg) { %>
+                    <option value="<%= prg.title %>"><%= prg.title %></option>   
+                <% }); %>
+               
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Location">Location:</label>
+            <select id="location" name="location" class="form-control" required>
+                <% program.forEach(function(prg) { %>
+                    <option value="<%= prg.place %>"><%= prg.place %></option>   
+                <% }); %>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration" name="duration" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mode">Mode:</label>
+            <select id="mode" name="mode" class="form-control" required>
+                <option value="Online">Online</option>
+                <option value="Offline">Offline</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="language">Language:</label>
+            <select id="language" name="language" class="form-control" required>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="schedule">Schedule:</label>
+            <select id="schedule" name="schedule" class="form-control" required>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label><br>
+            <textarea id="des" name="description" class="form-control" rows="4" cols="50" required style="color: black;"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image:</label><br>
+            <input type="file" id="image" name="image" class="form-control" accept="image/*" required style="color: black;">
+            <img src="#" id="imgPreview" alt="No image" style="display: none;">
+            <div id="imageError" style="color: red;"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="deadline">Deadline:</label>
+            <input type="text" id="deadline" name="deadline" class="form-control ck-content" required style="color: black;" >
+        </div>
+
+        <div class="form-group">
+            <label for="introduction">Introduction:</label><br>
+            <textarea id="intro" name="intro" class="form-control ck-content" rows="4" cols="50" required style="color: black;" ></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="admissions">Admissions:</label><br>
+            <textarea id="admissions" name="admissions" class="form-control ck-content" rows="4" cols="50" required style="color: black;" ></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="curriculum">Curriculum:</label><br>
+            <textarea id="curri" name="curriculum" class="form-control ck-content" rows="4" cols="50" placeholder="Content" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="programOutcome">Program Outcome:</label><br>
+            <textarea id="prg" name="programOutcome" class="form-control ck-content" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Tuition">Tuition:</label><br>
+            <textarea id="tut" name="tuition" class="form-control" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Funding">Funding:</label><br>
+            <textarea id="fund" name="funding" class="form-control" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="career">Career:</label><br>
+            <textarea id="career" name="career" class="form-control" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="school">School:</label><br>
+            <textarea id="schl" name="school" class="form-control" rows="4" cols="50" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Questions">Questions:</label><br>
+            <textarea id="quest" name="questions" class="form-control" rows="4" cols="50" required></textarea>
+        </div>
+        
+      
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+
+<%- include('../layouts/footer') %>

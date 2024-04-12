@@ -1,0 +1,134 @@
+/* Styles for the container */
+.container5 {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 80%;
+    color: rgb(59, 57, 57);
+}
+.container5 h2{
+    color: #554f4f;
+}
+/* Styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(59, 57, 57);
+}
+
+/* Styles for table header */
+thead {
+    background-color: #007bff;
+    color: #554f4f;
+}
+
+/* Styles for table header cells */
+th {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Styles for table body */
+tbody {
+    border-top: 2px solid #7a7575;
+}
+
+/* Styles for table body rows */
+tr {
+    border-bottom: 1px solid #ccc;
+    color: rgb(59, 57, 57);
+
+}
+
+/* Styles for table body cells */
+td {
+    padding: 15px;
+}
+
+/* Style for edit and delete links */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.big-td{
+   width: 75%;
+   color: rgb(59, 57, 57);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style for category content */
+.category {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.category h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.category p {
+    margin: 5px 0;
+    color: rgb(59, 57, 57);
+
+}
+
+.category img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Style for delete confirmation */
+.confirmDeletion {
+    color: red;
+}
+
+
+/* Style for add new category button */
+.btn-primary {
+    margin-bottom: 20px;
+    background-color: #007bff; /* Blue background color for the button */
+    color: #fff; /* White text color for the button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+#ta{
+    color: #0056b3;
+    background-color: #333;
+}
+
+textarea {
+    color: #0056b3;
+    width: 1200px; /* Set the width to 100% of the parent container */
+    min-height: 200px; /* Set the minimum height to 200 pixels */
+    padding: 10px; /* Add some padding for better appearance */
+    font-size: 16px; /* Set the font size to 16 pixels */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    border-radius: 5px; /* Add rounded corners */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+textarea:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #007bff; /* Change the border color when focused */
+}
+.ck-content {
+    color: #333; /* Change to your desired text color */
+}

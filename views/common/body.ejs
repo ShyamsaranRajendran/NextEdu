@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/body.css">
+    
 </head>
 <body>
     <div class="box">
@@ -16,27 +17,40 @@
                     the  world
             </div>
         </div>
+        
         <div class="boxs">
-            <div class="dropdown">
-                <button class="box-study">What do you want to study <span>&#9660;</span></button>
-                <div class="dropdown-content">
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
-                    <a href="#">Option 3</a>
+            <div class="custom-dropdown">
+                <button class="custom-dropdown-btn" id="studyDropdownBtn">
+                    <span class="custom-icon">&#128269;</span> <!-- Search icon -->
+                    <input type="text" id="studyInput" placeholder="What do you want to study">
+                    <span>&#9660;</span>
+                </button>
+                <div class="custom-dropdown-content" id="studyDropdownContent">
+                    <% programs.forEach(function(program) { %>
+                        <a href="#"><%= program.title %></a>
+                    <% }); %>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="place-box">Where do you want to study <span>&#9660;</span></button>
-                <div class="dropdown-content">
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
-                    <a href="#">Option 3</a>
+        
+            <div class="custom-dropdown">
+                <button class="custom-dropdown-btn" id="placeDropdownBtn">
+                    <span class="custom-icon">&#128269;</span> <!-- Search icon -->
+                    <input type="text" id="placeInput" placeholder="Where do you want to study">
+                    <span>&#9660;</span>
+                </button>
+                <div class="custom-dropdown-content" id="placeDropdownContent">
+                    <% programs.forEach(function(program) { %>
+                        <a href="#"><%= program.place %></a>
+                    <% }); %>
                 </div>
             </div>
+        
             <div class="search">
-                <button>Search</button>
+                <button id="searchButton">Search</button>
             </div>
+            <script src="js/bodydrop.js"></script>
         </div>
+        
     </div>
      <br>
      <br>
@@ -49,41 +63,29 @@
                 Browse programs by category
             </div>
             <div>
-                <button class="cat-btn">View all the disciplines</button>
+                <a href="/all-category" class="cat-btn">View all the disciplines</a>
+
             </div>
         </div>
-
         <div class="card-container">
-
-            <div class="card">
-                <div class="card-content">
-                  <h2 class="card-title">Card 1</h2>
-                  <p class="card-description">Description 1</p>
-                  <p class="card-data">Data 1</p>
+            <% categorys.forEach(function(category) { %>
+                <% if(category.front==1)  { %>
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="card-title"><%= category.title %></h2>
+                        <p class="card-description"><%= category.txt1 %></p>
+                        <p class="card-description"><%= category.txt2 %></p>
+                        <p class="card-description"><%= category.txt3 %></p>
+                        <!-- Additional content to be displayed on hover -->
+                        <div class="additional-info">
+                            <!-- Add content here -->
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-content">
-                  <h2 class="card-title">Card 1</h2>
-                  <p class="card-description">Description 1</p>
-                  <p class="card-data">Data 1</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-content">
-                  <h2 class="card-title">Card 1</h2>
-                  <p class="card-description">Description 1</p>
-                  <p class="card-data">Data 1</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-content">
-                  <h2 class="card-title">Card 1</h2>
-                  <p class="card-description">Description 1</p>
-                  <p class="card-data">Data 1</p>
-                </div>
-              </div>
-            
+                <% } %>
+            <% }) %>
+        </div>
+        
         </div>
         
     </div>
@@ -103,74 +105,24 @@
             Worried about your study costs?
         </div>
         <div class="sch-cards">
-            <div class="box-sch">
-                <img src="images/profile.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
 
+            <% scholarship.forEach(function(scholar) { %>
             <div class="box-sch">
-                <img src="images/profile.png" alt="Image Description">
+                <img src="/<%= scholar.image %>" alt="Image Description">
                 <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
+                    <h2><%= scholar.title %></h2>
+                    <br><br>
                    <div class="data">
                         <div class="txt-data">
-                            Data
+                            <%= scholar.time %>
                         </div>
                         <div class="read-data">
                             Read-More
                         </div>
                     </div>
                 </div>
-                
             </div>
-
-            <div class="box-sch">
-                <img src="images/profile.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="box-sch">
-                <img src="images/profile.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            
+            <% }) %>            
             
         </div>
     </div>
@@ -190,74 +142,23 @@
             Explore our detailed breakdowns of the study abroad destinations around the world!
         </div>
         <div class="sch-cards">
-            <div class="box-sch">
-                <img src="images/profile1.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="box-sch">
-                <img src="images/profile1.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
+            <% country.forEach(function(con) { %>
+                <div class="box-sch">
+                    <img src="/<%= con.image %>" alt="Image Description">
+                    <div class="content">
+                        <h2><%= con.title %></h2>
+                        <br><br>
+                       <div class="data">
+                            <div class="txt-data">
+                                <%= con.time %>
+                            </div>
+                            <div class="read-data">
+                                Read-More
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-            </div>
-
-            <div class="box-sch">
-                <img src="images/profile1.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="box-sch">
-                <img src="images/profile1.png" alt="Image Description">
-                <div class="content">
-                    <h2>Description Line 1</h2>
-                    <p>Description Line 2</p>
-                   <div class="data">
-                        <div class="txt-data">
-                            Data
-                        </div>
-                        <div class="read-data">
-                            Read-More
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            
+                <% }) %>  
             
         </div>
     </div>
@@ -276,14 +177,15 @@
             Learn our best tips for studying abroad!
           </div>
         <div class="sch-cards">
+
             <div class="box-sch">
-                <img src="images/profile3.png" alt="Image Description">
+                <img src="/images/guide-1.jpg" alt="Image Description">
                 <div class="content">
-                    <h2>Description Line 3</h2>
-                    <p>Description Line 2</p>
-                    <div class="data">
+                    <h2>How to Study Abroad: The Ultimate Guide for International Students in 2024</h2>
+                   <br><br>
+                   <div class="data">
                         <div class="txt-data">
-                            Data
+                            Jan 1, 2024
                         </div>
                         <div class="read-data">
                             Read-More
@@ -294,13 +196,13 @@
             </div>
 
             <div class="box-sch">
-                <img src="images/profile3.png" alt="Image Description">
+                <img src="/images/guide-2.jpg" alt="Image Description">
                 <div class="content">
-                    <h2>Description Line 3</h2>
-                    <p>Description Line 2</p>
+                    <h2>Top 10 Places in the World to Study Abroad - 2024</h2>
+                    <br><br>
                    <div class="data">
                         <div class="txt-data">
-                            Data
+                            Jan 1, 2024
                         </div>
                         <div class="read-data">
                             Read-More
@@ -311,13 +213,13 @@
             </div>
 
             <div class="box-sch">
-                <img src="images/profile3.png" alt="Image Description">
+                <img src="/images/guide-3.jpeg" alt="Image Description">
                 <div class="content">
-                    <h2>Description Line 3</h2>
-                    <p>Description Line 2</p>
+                    <h2>The Cheapest Countries to Study In Europe</h2>
+                    <br><br>
                    <div class="data">
                         <div class="txt-data">
-                            Data
+                            Oct 20, 2022
                         </div>
                         <div class="read-data">
                             Read-More
@@ -328,13 +230,13 @@
             </div>
 
             <div class="box-sch">
-                <img src="images/profile3.png" alt="Image Description">
+                <img src="/images/guide-4.jpg" alt="Image Description">
                 <div class="content">
-                    <h2>Description Line 3</h2>
-                    <p>Description Line 2</p>
+                    <h2>Degree Guides</h2>
+                    <br><br>
                    <div class="data">
                         <div class="txt-data">
-                            Data
+                            Oct 11, 2022
                         </div>
                         <div class="read-data">
                             Read-More

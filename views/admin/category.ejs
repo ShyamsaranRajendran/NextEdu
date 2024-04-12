@@ -1,0 +1,41 @@
+<%- include('../layouts/adminheader') %>
+<link rel="stylesheet" href="/css/category-sty.css">
+<br>
+<br>
+<div class="container2">
+    <h2 class="category-title">Categories</h2>
+    <a href="/admin/category/content" class="btn btn-primary">Sub-category</a>
+    <br><br>
+    <a href="/admin/category/add-category" class="btn btn-primary">Add a new category</a>
+
+    <br><br>
+    <table class="table table-striped sorting">
+        <thead>
+            <tr class="home">
+                <th>Title</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% categorys.forEach(function(category) { %>
+                <tr id="id_<%= category._id %>" class="<%= category.slug %>">
+                    <td>
+                        <%= category.title %>
+                        <ol>
+                            <li><%= category.txt1 %></li>
+                            <li><%= category.txt2 %></li>
+                            <li><%= category.txt3 %></li>
+                        </ol>
+                        <div>Status : <%= category.front %></div>
+                    </td>
+                    <td><a href="/admin/categories/edit-category/<%= category.slug %>">Edit</a></td>
+                    <td><a class="confirmDeletion" href="/admin/category/delete-category/<%= category._id %>">Delete</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<%- include('../layouts/footer') %>

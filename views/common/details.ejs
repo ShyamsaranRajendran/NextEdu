@@ -1,0 +1,92 @@
+<%- include('../layouts/header') %>
+
+<link rel="stylesheet" href="/css/details.css">
+
+<div class="contentContainer">
+     <div class="backContainer">
+        <div class="BackContents">
+            <div class="UniName">
+              <div><%= content.university %></div>
+            </div>
+              <div class="schName">
+                  College of Charleston: School of the Arts
+              </div>
+        </div>
+        <div class="Backimages">
+            <div>
+                <img src="/<%= content.image %>" alt="" class="SchImg">
+            </div>
+        </div>
+        <div class="about-contact">
+            <div>
+                <a href="#">
+                <button class="sch-btn">
+                    Contact School
+                </button>
+                 </a>
+              </div>
+        </div>
+       
+     </div>
+</div>
+<br>
+<br>
+
+<div class="sch-Content">
+    <div class="leftside">
+        <button class="nav-button introduction">Introduction</button>
+        <button class="nav-button gallery">Gallery</button>
+        <button class="nav-button admissions">Admissions</button>
+        <button class="nav-button curriculum">Curriculum</button>
+        <button class="nav-button career-opportunities">Career Opportunities</button>
+        <button class="nav-button facilities">Facilities</button>
+        <button class="nav-button student-testimonials">Student Testimonials</button>
+        <button class="nav-button about-the-school">About the School</button>
+        <button class="nav-button ask-a-question">Ask a Question</button> 
+    </div>
+    <div class="rightside">
+        <button class="toggle-menu" onclick="toggleMenu()">Menu</button>
+        <div class="menu">
+            <button class="nav-button introduction" onclick="showContent('introduction')">Introduction</button>
+            <button class="nav-button gallery" onclick="showContent('gallery')">Gallery</button>
+            <button class="nav-button admissions" onclick="showContent('admissions')">Admissions</button>
+            <!-- Add more buttons for other sections -->
+        </div>
+        
+        <div class="content" id="introduction">
+            <!-- Introduction content goes here -->
+            This is the introduction section.
+        </div>
+        
+        <div class="content" id="gallery">
+            <!-- Gallery content goes here -->
+            This is the gallery section.
+        </div>
+        
+        <div class="content" id="admissions">
+            <!-- Admissions content goes here -->
+            This is the admissions section.
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <h2>Content Details</h2>
+    <p><strong>University:</strong> <%= content.university %></p>
+</div>
+<script>
+   function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.classList.toggle('open');
+    }
+
+    function showContent(sectionId) {
+        var content = document.getElementById(sectionId);
+        content.classList.toggle('open');
+    }
+
+</script>
+
+<%- include('../layouts/footer') %>

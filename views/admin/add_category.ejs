@@ -1,0 +1,38 @@
+<%- include('../layouts/adminheader') %>
+<br>
+<br>
+<link rel="stylesheet" href="/css/add_program-sty.css">
+<div class="container1">
+<h2 class="page-title">Add a category</h2>
+<a href="/admin/category" class="btn btn-primary">Back to all the program</a>
+<br><br>
+<form action="/admin/category/add-category" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Title">
+    </div>
+    
+    <div class="form-group">
+        <label for="txt1">txt1</label>
+        <input type="text" class="form-control" name="txt1" value="<%= txt1 %>" placeholder="txt1">
+      </div>
+    
+      <div class="form-group">
+        <label for="txt2">txt2</label>
+        <input type="text" class="form-control" name="txt2" value="<%= txt2 %>" placeholder="txt2">
+      </div>
+      <div class="form-group">
+        <label for="txt3">txt3</label>
+        <input type="text" class="form-control" name="txt3" value="<%= txt3 %>" placeholder="txt3">
+      </div>
+      <div class="form-group">
+        <label for="front">front</label>
+        <input type="number" class="form-control" name="front" value="<%= front %>" placeholder="0 or 1">
+      </div>
+  
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+<br>
+<br>
+<%- include('../layouts/footer') %>

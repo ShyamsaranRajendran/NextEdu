@@ -1,0 +1,57 @@
+<%- include('../layouts/adminheader') %>
+<link rel="stylesheet" href="/css/con_content.css">
+<div class="container5">
+    <h2 class="page-title">View Category Content</h2>
+    <br>
+    <a href="/admin/category/content/add-con-category" class="btn btn-primary">Add a content category</a>
+   <br>
+    <table>
+    <thead>
+        <tr class="home">
+            <th>Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    
+    <% content_categorys.forEach(function(category) { %>
+        <tr class="<%= category.__id %>">
+           <td class="big-td">
+
+            <div class="category">
+            <h3><%= category.title %></h3>
+            <p><strong>University:</strong> <%= category.university %></p>
+            <p><strong>Programs:</strong> <%= category.programs %></p>
+            <p><strong>Location:</strong> <%= category.location %></p>
+            <p><strong>Degree:</strong> <%= category.degree %></p>
+            <p><strong>Duration:</strong> <%= category.duration %></p>
+            <p><strong>Mode:</strong> <%= category.mode %></p>
+            <p><strong>Language:</strong> <%= category.language %></p>
+            <p><strong>Schedule:</strong> <%= category.schedule %></p>
+            <p><strong>Description:</strong> <%= category.description %></p>
+            <img src="/<%= category.image %>" alt="Image" width="200">
+            <p><strong>Deadline:</strong> <%= category.deadline %></p>
+            <p><strong>Introduction:</strong> <%= category.intro %></p>
+            <p><strong>Curriculum:</strong> <%= category.curriculum %></p>
+            <p><strong>Program Outcome:</strong> <%= category.programOutcome %></p>
+            <p><strong>Tuition:</strong> <%= category.tuition %></p>
+            <p><strong>Funding:</strong> <%= category.funding %></p>
+            <p><strong>Career:</strong> <%= category.career %></p>
+            <p><strong>School:</strong> <%= category.school %></p>
+            <p><strong>Questions:</strong> <%= category.questions %></p>
+            </div>
+        </td>
+        <br>
+        <td><a href="/admin/category/content/edit-category/<%= category.slug %>">Edit</a></td>
+        <br>
+        <td><a class="confirmDeletion" href="/admin/category/content/delete-category/<%= category._id %>">Delete</a></td>
+ 
+        </tr>
+    <% }); %>
+
+</tbody>
+</table>
+</div>
+<%- include('../layouts/footer') %>

@@ -1,0 +1,37 @@
+<%- include('../layouts/adminheader') %>
+<link rel="stylesheet" href="/css/program-sty.css">
+<br>
+<br>
+<div class="container1">
+    <h2 class="program-title">Programs</h2>
+    <a href="/admin/programs/add-program" class="btn btn-primary">Add a new program</a>
+    <br><br>
+    <table class="table table-striped sorting">
+        <thead>
+            <tr class="home">
+                <th>Title</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% programs.forEach(function(program) { %>
+                <tr id="id_<%= program._id %>" class="<%= program.slug %>">
+                    <td><%= program.title %></td>
+                    <td><a href="/admin/programs/edit-program/<%= program.slug %>">Edit</a></td>
+                    
+                        <td><a class="confirmDeletion" href="/admin/programs/delete-program/<%= program._id %>">Delete</a></td>
+                
+   
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<br>
+<br>
+<%- include('../layouts/footer') %>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+

@@ -1,0 +1,75 @@
+<%- include('../layouts/adminheader') %>
+<br>
+<br>
+<link rel="stylesheet" href="/css/add_program-sty.css">
+<div class="container1">
+  <h2 class="price-title">Add a country</h2>
+  <a href="/admin/countries" class="btn btn-primary">Back to all the countries</a>
+  <br><br>
+  <form id="countryForm" action="/admin/countries/add-country" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" value="" placeholder="Title">
+    </div>
+  
+    <div class="form-group">
+      <label for="desc">Description</label>
+      <textarea class="form-control" name="desc" rows="5" placeholder="Description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Time</label>
+      <input type="text" class="form-control" name="time" value="" placeholder="Time">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" class="form-control" name="image" id="img">
+      <img src="#" id="imgPreview" alt="No image">
+      <div id="imageError" style="color: red;"></div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#imgPreview').attr('src', e.target.result).width(100).height(100);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#img").change(function () {
+    readURL(this);
+    validateImageDimensions(this);
+  });
+
+  function validateImageDimensions(input) {
+    if (input.files && input.files[0]) {
+      var img = new Image();
+      img.onload = function() {
+        if (this.width < 200 && this.height < 400) {
+          $('#imageError').text(''); // Clear error message if dimensions are correct
+        } else {
+          $('#imageError').text('Image dimensions must be 200px x 400px.'); // Display error message
+        }
+      };
+      img.src = URL.createObjectURL(input.files[0]);
+    }
+  }
+
+  $('#countryForm').submit(function(event) {
+    if ($('#imageError').text() !== '') {
+      event.preventDefault(); // Prevent form submission if image dimensions are incorrect
+    }
+  });
+</script>
+<br>
+<br>
+<%- include('../layouts/footer') %>

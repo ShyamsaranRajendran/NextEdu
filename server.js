@@ -63,13 +63,28 @@ app.use((req, res, next) => {
 });
 
 // Importing routers
-const pagesRouter = require('./routes/general');
+const pagesRouter = require('./routes/viewsRouter/pages');
+const adminprogramsRouter = require('./routes/adminRouter/admin_program');
+const admincategoryRouter = require('./routes/adminRouter/admin_category');
+const adminScholarshipRouter = require('./routes/adminRouter/admin_scholarship');
+const adminCountryRouter = require('./routes/adminRouter/admin_country');
+const users = require('./routes/viewsRouter/user');
+const adminContentCategory = require('./routes/adminRouter/admin_con_category');
+
 
 // Use routers as middleware
+
 app.use('/', pagesRouter);
+app.use('/admin/programs', adminprogramsRouter);
+app.use('/admin/category', admincategoryRouter);
+app.use('/admin/scholarships', adminScholarshipRouter);
+app.use('/admin/countries', adminCountryRouter);
+app.use('/admin/category/content', adminContentCategory);
+
+app.use('/user', users);
 
 // Set port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 // Start server
 app.listen(port, function () {

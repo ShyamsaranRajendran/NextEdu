@@ -1,0 +1,93 @@
+/* Styles for container */
+.container1 {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles for page title */
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Styles for back button */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Styles for form labels */
+label {
+    font-weight: bold;
+}
+
+/* Styles for form inputs */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+/* Styles for form inputs on focus */
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Styles for submit button */
+[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles for textarea */
+textarea {
+    color: black;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+    background-color: #007bff;
+
+}
+
+/* Additional styles for textarea on focus */
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea#ta {
+    color: black;
+    /* Add any additional styles here */
+}

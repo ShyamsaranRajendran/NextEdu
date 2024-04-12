@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        /* Optional CSS styling */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <form id="counsellingForm" onsubmit="return validateForm()">
+            <div>
+                <h1>Counselling Form</h1>
+            </div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter Your Name" required>
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="Enter Your Age" required>
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="others" name="gender" value="Others">
+                <label for="others">Others</label>
+            </div>
+            <div>
+                <label for="phnno">Phone number:</label>
+                <input type="tel" id="phnno" placeholder="+919876543210" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
+            </div>
+            <div>
+                <label for="mark">Mark:</label>
+                <input type="number" id="mark" placeholder="Enter Your Mark" required>
+            </div>
+            <div>
+                <h3>College</h3>
+                <h4>Choose Your Preferred College</h4>
+                                <input type="checkbox">
+
+                <lable>SRI KRISHNA COLLEGE OF ENGINEERING</lable><br>
+                <input type="checkbox">
+                <lable>ANNA UNIVERSITY</lable><br>
+                <input type="checkbox">
+                <lable>PSG COLLEGE OF ENGINEERING</lable><br>
+                <input type="checkbox">
+                <lable>IIT MADRAS</lable><br>
+                <input type="checkbox">
+                <lable>BHARADHISAN UNIVERSITY</lable><br>            </div>
+            <div>
+                <h3>Courses</h3>
+                <label for="courses">Choose a Course:</label>
+                <select id="courses" required>
+                    <option value="">-- Choose a Course --</option>
+                    <option value="Computer Science And Engineering">Computer Science And Engineering</option>
+                    <option value="Mechatronics engineering">Mechatronics engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Electronics and Communications Engineering">Electronics and Communications Engineering</option>
+                    <option value="Chemical engineering">Chemical engineering</option>
+                    <option value=" nuclear engineering and petroleum engineering">Nuclear engineering and petroleum engineering</option>
+                    <option value="Automobile engineering">Automobile engineering</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var phnno = document.getElementById('phnno').value;
+            var email = document.getElementById('email').value;
+            var mark = document.getElementById('mark').value;
+            var courses = document.getElementById('courses').value;
+
+            if (!name || !age || !gender || !phnno || !email || !mark || !courses) {
+                alert("Please fill in all the fields.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
