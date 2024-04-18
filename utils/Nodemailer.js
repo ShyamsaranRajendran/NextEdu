@@ -8,7 +8,7 @@ function Mail(userEmail, subject, textContent) {
         service: 'gmail',
         auth: {
             user: 'shyamsaran0206@gmail.com',
-            pass: 'vyki efil wiww ybav',
+            pass: '____Key____',
           },
         secure: true,
         port: 465,
