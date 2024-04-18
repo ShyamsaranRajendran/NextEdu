@@ -1,0 +1,112 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styles */
+.container-003 {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Chat box styles */
+.chat-box {
+    background-color: #f3f4f6; /* Light gray background */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Chat messages styles */
+.chatMessages {
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling */
+    max-height: 400px; /* Limit height and enable scrolling */
+}
+
+/* Message container styles */
+.messageContainer {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.messageContainer.right {
+    justify-content: flex-end;
+}
+
+.messageContainer.left {
+    justify-content: flex-start;
+}
+
+/* Logo styles */
+.logo {
+    margin-right: 10px;
+}
+
+/* User info styles */
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+    color: #333; /* Darken username color */
+}
+
+.timestamp {
+    color: #777; /* Darker timestamp color */
+    font-size: 0.9em; /* Adjust timestamp font size */
+}
+
+/* Message content styles */
+.messageContent {
+    background-color: #fff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Increase padding */
+    max-width: 70%; /* Limit message width */
+}
+
+/* Chat input styles */
+.chat-input {
+    margin-top: 20px;
+}
+
+#messageForm {
+    display: flex;
+    align-items: center;
+}
+
+#desc {
+    flex: 1;
+    padding: 12px; /* Increase input padding */
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Round input corners */
+}
+
+button[type="submit"] {
+    padding: 12px 24px; /* Increase button padding */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Round button corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles (assuming it's included via layout) */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #777; /* Darker footer text color */
+}

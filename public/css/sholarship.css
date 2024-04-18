@@ -1,0 +1,229 @@
+.body-1{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    justify-content: space-between;
+    
+
+}
+.container-0002{
+    background-color:white ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cont1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(151, 151, 151);
+    padding: 3%;
+    max-width: 90%;
+
+}
+.cont2{
+    
+    padding: 5%;
+    max-width: 100%;
+    padding: 10% 20% 10%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    
+    
+    gap:25px;
+    
+    
+}
+
+
+a{
+    color: rgb(11, 151, 125);
+    font-size: 17px;
+    font-weight: bold;
+}
+.image {
+  
+   max-width: 100%;
+}
+.image img{
+    display: block;
+    width: 100%; /* Set the width of the image to 100% */
+    height: auto;
+    object-fit: cover;
+    
+}
+.links{
+    display: flex;
+    
+    gap: 1vw;
+}
+.desc1{
+    font-size: 20px;
+}
+.line{
+    border: 0.5px solid rgb(58, 57, 57);
+}
+
+.apply{
+    display: flex;
+    flex-direction: column;
+    gap:25px ;
+}
+.apply >.d1{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.appbut >a>button{
+    border-radius: 10px;
+    border:none;
+    background-color:rgb(244, 130, 130);
+    color: rgb(237, 10, 10);
+    font-weight: bold;
+    padding: 10px;
+}
+.tableofcontents{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+.toc{
+    
+    font-size: large;
+    font-weight:bold ;
+}
+.toclinks >li{
+    padding: 0 0 15px 25px ;
+}
+.toclinks > li>a{
+    color: rgb(11, 151, 125);
+    font-size: large;
+}
+.para1{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+.para1 .head{
+    font-size: large;
+    font-weight:bold ;
+}
+ .cont{
+
+    font-size: 19px;
+}
+.para1 >div>a{
+    color: rgb(11, 151, 125);
+    font-size: 17px;
+    font-weight: bold;
+}
+.para2{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.para2 .head{
+    font-size: 20px;
+    font-weight:bold ;
+}
+.para2image>img{
+    display: block;
+    width: 100%; /* Set the width of the image to 100% */
+    height: auto;
+    object-fit: cover;
+}
+.scholarbox{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: solid 1px rgb(149, 147, 147);
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    border-radius: 6px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px rgba(51, 51, 51, 0.5);
+}
+.sb1{
+    font-size: 22px;
+    font-weight: bold;
+}
+.sb2{
+    font-size: 18px;
+
+}
+.scholarbut >a >button{
+    padding:10px;
+    color: wheat;
+    font-weight: bold;
+    background-color: rgb(196, 37, 122);
+    border-radius: 5px;
+    border: none;
+}
+.scholarbut >a >button:hover{
+    background-color: rgb(59, 9, 105);
+}
+
+
+
+.colortext{
+    color: paleturquoise;
+}
+.newsletter{
+    height:auto;
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top: solid 5px black;
+    background-color: aliceblue;
+}
+
+input[type="text"],
+input[type="email"]
+ {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(250, 251, 252);
+}
+
+
+.newbut {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsbut:hover {
+    background-color: #0056b3;
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.checkbx{
+    display: flex;
+   
+    align-items: center;
+}
+.checkbx >a{
+    color: red;
+    font-size: 16px;
+    font-weight: 400;
+}

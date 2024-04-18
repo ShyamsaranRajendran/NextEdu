@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 100%; /* Adjust width for smaller screens */
+    width: 100%; 
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -14,13 +14,7 @@ body {
 body{
     margin: 0%;
 }
-p{
-    color:rgb(63, 214, 214);
-    
-}
-h2{
-    color: azure;
-}
+
 header {
     background-color: #f2f2f2;
     padding: 10px;
@@ -35,7 +29,10 @@ header {
 .logo-head img {
     height: 25px;
 }
-
+.no-underline {
+    text-decoration: none;
+    color: #333;
+}
 .sections {
     display: flex;
     align-items: center;

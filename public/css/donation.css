@@ -1,0 +1,43 @@
+    /* Style the form container */
+    .frm-container {
+        width: 50%;
+        margin: auto;
+        padding: 5% 10% 5%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+    /* Style the form fields */
+    .frm-container input[type="text"],
+    .frm-container input[type="email"],
+    .frm-container select,
+    .frm-container textarea {
+        width: 100%;
+        padding: 2% 3% 2%;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Style the submit button */
+    .frm-container input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 0;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Style the submit button on hover */
+    .frm-container input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+
+    #amount{
+        padding: 20px 10px 20px ;
+    }

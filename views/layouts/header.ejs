@@ -15,28 +15,36 @@
                     <img src="/images/logo1.png" alt="logo">
                 </div>
                 <div class="sections">
-                    <div class="globe">
-                        <div id="google_translate_element">
-                            <i class="fa-solid fa-globe"></i>                        </div>
-                        
-                    </div>
-                    <div class="search">
-                        <i class="fa fa-search"></i>
-                    </div>
+                    
                     <div class="auth-buttons">
-                        <div class="sbtn">
-                            <button onclick="">Sign In</button>
-                        </div>
-                        <div class="rbtn">
-                            <button>Register</button>
-                        </div>
+                 
+
+                        <% if(user) { %> 
+                            <div class="rbtn">
+                              <a  href="/usr/logout"><button> Hi, <%= user.username %> (logout) </button></a>
+                            </div>
+                          <% } else { %> 
+                            <div class="rbtn">
+                              <a  href="/usr/register"><button>Register</button></a>
+                            </div>
+                            <div class="sbtn">
+                              <a  href="/usr/login"><button>Log in</button></a>
+                            </div>
+                          <% } %>
+                          <% if(user && user.admin==1) { %> 
+                            <div class="sbtn">
+                              <a  href="/admin/programs"><button>Admin Area</button></a>
+                            </div>
+                          <% } %>
+
+
                     </div>
                 </div>
             </div>
         </header>
         <div class="head-down">
             <div class="content">
-                List your programs ?
+                <a href="http://localhost:8501/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M21.928 11.607c-.202-.488-.635-.605-.928-.633V8c0-1.103-.897-2-2-2h-6V4.61c.305-.274.5-.668.5-1.11a1.5 1.5 0 0 0-3 0c0 .442.195.836.5 1.11V6H5c-1.103 0-2 .897-2 2v2.997l-.082.006A1 1 0 0 0 1.99 12v2a1 1 0 0 0 1 1H3v5c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5a1 1 0 0 0 1-1v-1.938a1.006 1.006 0 0 0-.072-.455zM5 20V8h14l.001 3.996L19 12v2l.001.005.001 5.995H5z"></path><ellipse cx="8.5" cy="12" rx="1.5" ry="2"></ellipse><ellipse cx="15.5" cy="12" rx="1.5" ry="2"></ellipse><path d="M8 16h8v2H8z"></path></svg></a>
             </div>
         </div>
 
@@ -46,10 +54,10 @@
                     <div class="custom-dropdown">
                         <button class="custom-dropbtn">Programs</button>
                         <div id="custom-dropdown1" class="custom-dropdown-content">
-                            <a href="Bacherlor">Bacherlor's degrees</a>
-                            <a href="Master">Master's degrees</a>
-                            <a href="MBA">MBA</a>
-                            <a href="PHDs">PHDs</a>
+                            <a href="/">Bacherlor's degrees</a>
+                            <a href="/">Master's degrees</a>
+                            <a href="/">MBA</a>
+                            <a href="/">PHDs</a>
                         </div>
                     </div>
                 </div>
@@ -57,18 +65,35 @@
                     <div class="custom-dropdown">
                         <button class="custom-dropbtn">Get study advice</button>
                         <div id="custom-dropdown2" class="custom-dropdown-content">
-                            <a href="#">Country guides</a>
-                            <a href="#">Scholarships</a>
-                            <a href="#">How to Study Abroad Guide</a>
-                            <a href="#">Quizzes & Tests</a>
-                            <a href="#">Subject guides</a>
-                            <a href="#">Articles</a>
-                            <a href="#">Chat with Students</a>
+                            <a href="/country/6612c4baac5b380c0ac160f1">Country guides</a>
+                            <a href="/scholar/6612c6d7ac5b380c0ac16113">Scholarships</a>
+                            <a href="/">How to Study Abroad Guide</a>
+                            <a href="/">Quizzes & Tests</a>
+                            <a href="/">Subject guides</a>
+                            <a href="/">Articles</a>
+                            <a href="/community">Chat with Students</a>
                         </div>
                     </div>
                 </div>
-                <div class="custom-hbtn">
-                    Global Study Fair
+                <div class="custom-pbtn">
+                    <div class="custom-dropdown">
+                        <button class="custom-dropbtn">Events</button>
+                        <div id="custom-dropdown1" class="custom-dropdown-content">
+                            <a href="/GlobalFairTrade">Global Fair Trade</a>
+                            <a href="/entrance">Entrance</a>
+                            <a href="/Live-Meet">Guide Meet</a>
+                       
+                        </div>
+                    </div>
+                </div>
+              
+                <div>
+                    <a href="/donation" class="no-underline">Donation</a>
+
+                </div>
+                <br>
+                <div>
+                    <a href="/recommend" class="no-underline">Recommend</a>
                 </div>
             </div>
         </div>

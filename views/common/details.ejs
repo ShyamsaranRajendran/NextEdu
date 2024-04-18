@@ -17,6 +17,52 @@
                 <img src="/<%= content.image %>" alt="" class="SchImg">
             </div>
         </div>
+        
+       
+     </div>
+</div>
+<br>
+<br>
+
+<div class="sch-Content">
+    <div class="leftside">
+        <% if (content.intro) { %>
+            <button class="nav-button " onclick="myfunc('intro')">Introduction</button>
+        <% } %>
+        
+        <% if (content.admissions) { %>
+            <button class="nav-button " onclick="myfunc('admissions')">Admissions</button>
+        <% } %>
+        
+        <% if (content.curriculum) { %>
+            <button class="nav-button " onclick="myfunc('curriculum')">Curriculum</button>
+        <% } %>
+        
+        <% if (content.career) { %>
+            <button class="nav-button " onclick="myfunc('career')">Career</button>
+        <% } %>
+        
+        <% if (content.programOutcome) { %>
+            <button class="nav-button " onclick="myfunc('programOutcome')">Program Outcome</button>
+        <% } %>
+        
+        <% if (content.tuition) { %>
+            <button class="nav-button " onclick="myfunc('tuition')">Tuition</button>
+        <% } %>
+        
+        <% if (content.funding) { %>
+            <button class="nav-button " onclick="myfunc('funding')">Funding</button>
+        <% } %>
+        
+        <% if (content.school) { %>
+            <button class="nav-button " onclick="myfunc('school')">About the School</button>
+        <% } %>
+        
+        <% if (content.questions) { %>
+            <button class="nav-button" onclick="myfunc('questions')">Ask a Question</button>
+        <% } %>
+        <br>
+        <br>
         <div class="about-contact">
             <div>
                 <a href="#">
@@ -26,66 +72,388 @@
                  </a>
               </div>
         </div>
-       
-     </div>
-</div>
-<br>
-<br>
-
-<div class="sch-Content">
-    <div class="leftside">
-        <button class="nav-button introduction">Introduction</button>
-        <button class="nav-button gallery">Gallery</button>
-        <button class="nav-button admissions">Admissions</button>
-        <button class="nav-button curriculum">Curriculum</button>
-        <button class="nav-button career-opportunities">Career Opportunities</button>
-        <button class="nav-button facilities">Facilities</button>
-        <button class="nav-button student-testimonials">Student Testimonials</button>
-        <button class="nav-button about-the-school">About the School</button>
-        <button class="nav-button ask-a-question">Ask a Question</button> 
+        
     </div>
     <div class="rightside">
-        <button class="toggle-menu" onclick="toggleMenu()">Menu</button>
-        <div class="menu">
-            <button class="nav-button introduction" onclick="showContent('introduction')">Introduction</button>
-            <button class="nav-button gallery" onclick="showContent('gallery')">Gallery</button>
-            <button class="nav-button admissions" onclick="showContent('admissions')">Admissions</button>
-            <!-- Add more buttons for other sections -->
+        <div class="key">
+            <div class="key-info">
+                <div class="title">
+                    Key Information
+                </div>
+                <div class="components">
+                    <div class="com-1">
+                        <div class="key-combiners">
+                        <% if (content.location) { %>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="M11.42 21.815a1.004 1.004 0 0 0 1.16 0C12.884 21.598 20.029 16.44 20 10c0-4.411-3.589-8-8-8S4 5.589 4 9.996c-.029 6.444 7.116 11.602 7.42 11.819zM12 4c3.309 0 6 2.691 6 6.004.021 4.438-4.388 8.423-6 9.731-1.611-1.308-6.021-5.293-6-9.735 0-3.309 2.691-6 6-6z"></path><path d="M11 14h2v-3h3V9h-3V6h-2v3H8v2h3z"></path></svg>
+                        </div>
+                        <div> <%- content.location %> </div>   
+                         <% } %>
+                        </div>
+                        <% if (content.duration) { %>
+                        <div class="key-combiners">
+                         
+                          <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm3.293 14.707L11 12.414V6h2v5.586l3.707 3.707-1.414 1.414z"></path></svg>
+                        </div>
+                            <div> <%- content.duration %> </div>   
+                         
+                     </div>
+                     <% } %>
+                     <div class="key-combiners">
+                        <% if (content.deadline) { %>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"></path></svg>
+                        </div>
+                        <div> <%- content.deadline %> </div>   
+                        <% } %>
+                    </div>
+                    </div>
+                    <div class="com-2">
+                        <div class="key-combiners">
+                            <% if (content.language) { %>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="M3.414 13.778 2 15.192l4.949 2.121 2.122 4.95 1.414-1.414-.707-3.536L13.091 14l3.61 7.704 1.339-1.339-1.19-10.123 2.828-2.829a2 2 0 1 0-2.828-2.828l-2.903 2.903L3.824 6.297 2.559 7.563l7.644 3.67-3.253 3.253-3.536-.708z"></path></svg>
+                        </div>
+                        <div> <%- content.language %> </div>   
+                        <% } %>
+
+                    </div>
+                    <div class="key-combiners">
+                        <% if (content.mode) { %>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="M20.1 14.56a2.07 2.07 0 0 0-.47-.18V9.62a1.64 1.64 0 0 0 .48-.18 1.78 1.78 0 0 0-1.78-3.09 1.62 1.62 0 0 0-.41.32l-4.11-2.38a1.7 1.7 0 0 0 .07-.51 1.78 1.78 0 0 0-3.56 0 1.7 1.7 0 0 0 .07.51L6.28 6.66a1.58 1.58 0 0 0-.41-.31 1.78 1.78 0 0 0-1.78 3.09 1.64 1.64 0 0 0 .48.18v4.76a2.07 2.07 0 0 0-.47.18 1.78 1.78 0 1 0 1.78 3.09 1.72 1.72 0 0 0 .4-.31l4.11 2.37a1.7 1.7 0 0 0-.07.51 1.78 1.78 0 0 0 3.56 0 1.69 1.69 0 0 0-.09-.56l4.09-2.36a1.7 1.7 0 0 0 .44.35 1.78 1.78 0 1 0 1.78-3.09zM6.72 15.69a1.72 1.72 0 0 0-.19-.47 1.53 1.53 0 0 0-.31-.4l5.38-9.33a1.82 1.82 0 0 0 1 0l5.4 9.33a1.53 1.53 0 0 0-.31.4 1.72 1.72 0 0 0-.19.47zM17.5 7.4a1.81 1.81 0 0 0 .17 1.38 1.75 1.75 0 0 0 1.12.84v4.76h-.07l-5.39-9.31.05-.07zM10.82 5a.12.12 0 0 0 0 .05L5.48 14.4h-.07V9.62a1.75 1.75 0 0 0 1.12-.84A1.81 1.81 0 0 0 6.7 7.4zm2.6 14a1.78 1.78 0 0 0-1.32-.58 1.75 1.75 0 0 0-1.28.54L6.7 16.6v-.06h10.78v.11z"></path></svg>
+                        </div>
+                        <div> <%- content.mode %> </div>   
+                        <% } %>
+                    </div>
+                    <div class="key-combiners">
+                        <% if (content.schedule) { %>
+                      <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z">
+                            </path>
+                            <path
+                                d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
+                            </path>
+                        </svg></div>
+                        <div> <%- content.schedule %> </div>   
+                        <% } %>
+                 </div>
+            
+                    </div>
+
+                    <div class="com-3">
+
+                        <div class="key-combiners">
+                            <% if (content.mode) { %>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="M20.1 14.56a2.07 2.07 0 0 0-.47-.18V9.62a1.64 1.64 0 0 0 .48-.18 1.78 1.78 0 0 0-1.78-3.09 1.62 1.62 0 0 0-.41.32l-4.11-2.38a1.7 1.7 0 0 0 .07-.51 1.78 1.78 0 0 0-3.56 0 1.7 1.7 0 0 0 .07.51L6.28 6.66a1.58 1.58 0 0 0-.41-.31 1.78 1.78 0 0 0-1.78 3.09 1.64 1.64 0 0 0 .48.18v4.76a2.07 2.07 0 0 0-.47.18 1.78 1.78 0 1 0 1.78 3.09 1.72 1.72 0 0 0 .4-.31l4.11 2.37a1.7 1.7 0 0 0-.07.51 1.78 1.78 0 0 0 3.56 0 1.69 1.69 0 0 0-.09-.56l4.09-2.36a1.7 1.7 0 0 0 .44.35 1.78 1.78 0 1 0 1.78-3.09zM6.72 15.69a1.72 1.72 0 0 0-.19-.47 1.53 1.53 0 0 0-.31-.4l5.38-9.33a1.82 1.82 0 0 0 1 0l5.4 9.33a1.53 1.53 0 0 0-.31.4 1.72 1.72 0 0 0-.19.47zM17.5 7.4a1.81 1.81 0 0 0 .17 1.38 1.75 1.75 0 0 0 1.12.84v4.76h-.07l-5.39-9.31.05-.07zM10.82 5a.12.12 0 0 0 0 .05L5.48 14.4h-.07V9.62a1.75 1.75 0 0 0 1.12-.84A1.81 1.81 0 0 0 6.7 7.4zm2.6 14a1.78 1.78 0 0 0-1.32-.58 1.75 1.75 0 0 0-1.28.54L6.7 16.6v-.06h10.78v.11z"></path></svg>
+                            </div>
+                            <div> <%- content.mode %> </div>   
+                            <% } %>
+                        </div>
+
+                     <div class="key-combiners">
+                        <% if (content.location) { %>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="m2.6 13.083 3.452 1.511L16 9.167l-6 7 8.6 3.916a1 1 0 0 0 1.399-.85l1-15a1.002 1.002 0 0 0-1.424-.972l-17 8a1.002 1.002 0 0 0 .025 1.822zM8 22.167l4.776-2.316L8 17.623z"></path></svg>
+
+                        </div>
+                        <div> <%- content.location %> </div>   
+                        <% } %>
+                    </div>
+                    <div class="key-combiners">
+                        <% if (content.location) { %>
+                      <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(22, 22, 22, 0.87);transform: ;msFilter:;"><path d="m21.447 6.105-6-3a1 1 0 0 0-.895 0L9 5.882 3.447 3.105A1 1 0 0 0 2 4v13c0 .379.214.725.553.895l6 3a1 1 0 0 0 .895 0L15 18.118l5.553 2.776a.992.992 0 0 0 .972-.043c.295-.183.475-.504.475-.851V7c0-.379-.214-.725-.553-.895zM10 7.618l4-2v10.764l-4 2V7.618zm-6-2 4 2v10.764l-4-2V5.618zm16 12.764-4-2V5.618l4 2v10.764z"></path></svg>
+                    </div>
+                        <div> <%- content.location %> </div>   
+                        <% } %>
+                 </div>
+               
+            </div>
         </div>
-        
-        <div class="content" id="introduction">
-            <!-- Introduction content goes here -->
-            This is the introduction section.
+
+        <div class="warning">
+            <div>
+                * Application portal open from April to May
+            </div>
+
+            <div>
+                ** These fees do not include the compulsory basic health insurance “Social security” for non-European residents.
+            </div>
         </div>
+
+</div>
+</div>
+        <div class="shower-container">
         
-        <div class="content" id="gallery">
-            <!-- Gallery content goes here -->
-            This is the gallery section.
+            <% if (content.intro) { %>
+                <div class="shower-box">
+                    <div >
+                        <h3><strong>Introduction:</strong></h3>
+               
+                    </div>
+                    <div>
+                        <button onclick="myfunc('intro')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="intro" id="intro">
+                    <h2><strong>Introduction:</strong></h2>
+                    <div><%- content.intro %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.admissions) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Admissions:</strong></h3>
+              
+                    </div>
+                   
+                    <div>
+                        <button onclick="myfunc('admissions')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="admissions" id="admissions">
+                    <h2><strong>Admissions:</strong></h2>
+                    <div><%- content.admissions %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.curriculum) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Curriculum:</strong></h3>
+            
+                    </div>
+                    <div>
+                        <button onclick="myfunc('curriculum')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="curriculum" id="curriculum">
+                    <h2><strong>Curriculum:</strong></h2>
+                    <div><%- content.curriculum %></div>
+                </div>
+            <% } %>
+
+           
+            <% if (content.programOutcome) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Program Outcome:</strong></h3>
+                    </div>
+                    <div>
+                        <button onclick="myfunc('programOutcome')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="programOutcome" id="programOutcome">
+                    <h3><strong>Program Outcome:</strong></h3>
+                    <div><%- content.programOutcome %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.tuition) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Tuition:</strong></h3>
+                    </div>
+                    <div>
+                        <button onclick="myfunc('tuition')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="tuition" id="tuition">
+                    <h3><strong>Tuition:</strong></h3>
+                    <div><%- content.tuition %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.funding) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Funding:</strong></h3>
+                    </div>
+                    <div>
+                        <button onclick="myfunc('funding')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="funding" id="funding">
+                    <h3><strong>Funding:</strong></h3>
+                    <div><%- content.funding %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.career) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Career:</strong></h3>
+                    </div>
+                    <div>
+                        <button onclick="myfunc('career')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="career" id="career">
+                    <h3><strong>Career:</strong></h3>
+                    <div><%- content.career %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.school) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>About the School:</strong></h3>
+                    </div>
+                    <div>
+                        <button onclick="myfunc('school')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="school" id="school">
+                    <h3><strong>About the School:</strong></h3>
+                    <div><%- content.school %></div>
+                </div>
+            <% } %>
+            
+            <% if (content.questions) { %>
+                <div class="shower-box">
+                    <div>
+                        <h3><strong>Questions:</strong></h3>
+                    </div>
+                    <div>
+                        <button onclick="myfunc('questions')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg></button>
+                    </div>
+                </div>
+                <div class="questions" id="questions">
+                    <h3><strong>Questions:</strong></h3>
+                    <div><%- content.questions %></div>
+                </div>
+            <% } %>
+            
+
+
         </div>
-        
-        <div class="content" id="admissions">
-            <!-- Admissions content goes here -->
-            This is the admissions section.
+        <div class="submissions">
+            <div class="separator">
+            </div>
+            <h2>College Registration Form</h2>
+            <div class="SubmissionContainer">
+                <div class="left-section">
+                    <form action="/submit-registration" method="POST">
+                        <!-- Basic Information -->
+                        <div class="fieldset-container">
+                            <fieldset>
+                                <legend>Basic Student Information</legend>
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            
+                                <label for="dateOfBirth">Date of Birth:</label>
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                            
+                                <label for="address">Address:</label>
+                                <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+                            
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            
+                                <label for="phoneNumber">Phone Number:</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            </fieldset>
+                             <br>
+                             <br><br>
+                            <input type="submit" value="Submit">
+
+
+                        </div>
+                        
+                        <!-- Qualification Requirements -->
+                      
+                    </form>
+                </div>
+                <div class="right-section">
+                    <!-- Admission Process -->
+
+                    <div class="fieldset-container">
+                        <fieldset>
+                            <legend>Qualification Requirements</legend>
+                            <label for="highestQualification">Highest Education Qualification:</label>
+                            <select id="highestQualification" name="highestQualification" required>
+                                <option value="">Select</option>
+                                <option value="High School">High School</option>
+                                <option value="Associate Degree">Associate Degree</option>
+                                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                <option value="Master's Degree">Master's Degree</option>
+                                <option value="Doctorate">Doctorate</option>
+                            </select>
+                        
+                            <label for="qualificationScore">Qualification Score:</label>
+                            <input type="text" id="qualificationScore" name="qualificationScore" required>
+                        
+                            <label for="entranceExam">Entrance Exam Cleared:</label>
+                            <input type="text" id="entranceExam" name="entranceExam">
+                        
+                            <label for="entranceExamScore">Entrance Exam Score:</label>
+                            <input type="text" id="entranceExamScore" name="entranceExamScore">
+                        
+                            <label for="experience">Experience Required (if any):</label>
+                            <input type="text" id="experience" name="experience">
+                        
+                            <label for="additionalInformation">Additional Information:</label>
+                            <textarea id="additionalInformation" name="additionalInformation" rows="4" cols="50"></textarea>
+                        </fieldset>
+                    </div>
+                    
+                   
+
+                    <div class="fieldset-container">
+                        <fieldset>
+                            <legend>Admission Process</legend>
+                            <div class="key-combiners-2">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(154, 149, 149, 0.87);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.897 5.516 5 6.934V22l5.34-4.004C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm-2.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg>
+                                </div>
+                                <div class="text">
+                                    Your information will be sent directly to the program provider. If available, we will also send you information about the requested and relevant programs and a link where you can sign up for the program directly.
+                                </div>
+                            </div>
+                            <div class="key-combiners-2">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.897 5.516 5 6.934V22l5.34-4.004C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm-2.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg>
+                                </div>
+                                <div class="text">
+                                    As part of our free service, we will also create an account for you in our platform, StudentHub, where you can communicate with the program and manage your preferences.
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    
+
+
+                </form>
+
+                </div>
+
+            </div>
+            
         </div>
     </div>
+    
 </div>
 
 
-
-<div>
-    <h2>Content Details</h2>
-    <p><strong>University:</strong> <%= content.university %></p>
-</div>
 <script>
-   function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        menu.classList.toggle('open');
+function myfunc(param) {
+    var contentDetails = document.getElementById(param);
+    if (contentDetails.style.display === "none" || contentDetails.style.display === "") {
+        contentDetails.style.display = "block";
+    } else {
+        contentDetails.style.display = "none";
     }
-
-    function showContent(sectionId) {
-        var content = document.getElementById(sectionId);
-        content.classList.toggle('open');
-    }
+}
 
 </script>
 

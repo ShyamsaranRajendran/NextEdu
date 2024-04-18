@@ -48,9 +48,9 @@
     border-radius: 20px;
 }
 .sch-btn{
-    width: 150px;
-    height: 80px;
-    padding: 10px;
+    width: auto;
+    height: auto;
+    padding: 20px 25px;
     border: none;
     background-color: rgb(212, 132, 132);
     border-radius: 30px;
@@ -79,25 +79,107 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     gap: 10px; /* Added gap between buttons */
 }
 
 .rightside {
-    flex: 3;
+    flex: 2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     position: relative;
+    width: 100%;
+}
+
+.key{
+    border: solid 1px white;
+    background-color: #fafafa;
+    margin: 10px;
+    padding: 10px;
+    width: 90%;
+    padding-left: 50px;
+}
+
+.key-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.key-info .title{
+    border-bottom: solid 2px black;
+    font-size: 40px;
+    font-weight: 800;
+    width: 90%;
+    padding: 10px;
+}
+
+.components {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4%;
+    padding-top: 15px;
+    width: 90%; /* Adjust the overall width */
+    max-width: 100%; /* Ensure it doesn't exceed the parent container */
+}
+
+.com-1,
+.com-2,
+.com-3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.com-1 svg,
+.com-2 svg,
+.com-3 svg {
+    width: 100%; /* Make the SVG icons fill the entire width of their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.key-combiners
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    gap: 5%;
+}
+.key-combiners-2
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    gap: 5%;
+
+}
+
+.warning{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5%;
+    gap: 10px;
 }
 
 .nav-button {
     background-color: #4CAF50; /* Green background */
     border: none;
     color: #F8F2F2; /* White text */
-    padding: 15px 32px; /* Padding */
+    padding: 2% 3%; /* Padding */
     text-align: center; /* Center text */
     text-decoration: none;
     display: inline-block;
@@ -105,25 +187,158 @@
     cursor: pointer; /* Cursor on hover */
     border-radius: 8px; /* Rounded corners */
     transition-duration: 0.4s; /* Smooth transition on hover */
+    width: 40%; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
 }
 
 .nav-button:hover {
     background-color: #45a049; /* Darker green on hover */
 }
 
-.menu {
-    display: none;
-    color: red;
-}
-.menu.open {
-    display: block;
-}
-.content {
-    display: none;
-    border: solid 12px;
-}
-.content.open {
-    display: block;
-    border: solid 12px;
+.shower-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow flex items to wrap if they exceed the container's width */
 }
 
+.shower-box {
+    width: 90%; /* Adjust width as needed */
+    border: solid 1px black;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.shower-box button {
+    padding: 10px;
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+.shower-box .intro,
+.shower-box .admissions,
+.shower-box .curriculum,
+.shower-box .programOutcome,
+.shower-box .tuition,
+.shower-box .funding,
+.shower-box .career,
+.shower-box .school,
+.shower-box .questions {
+    flex: 1; /* Each content div expands to fill available space */
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: none;
+    background-color: #fafafa;
+}
+
+
+.intro,
+.admissions,
+.curriculum,
+.programOutcome,
+.tuition,
+.funding,
+.career,
+.school,
+.questions {
+    display: none;
+    padding: 10px;
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: none;
+    background-color: #fafafa;
+
+}
+
+.cont{
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    display: none;
+}
+
+.submissions{
+    width: 93%;
+}
+.separator{
+    margin-left: 4%;
+    width: 100%;
+    max-width: 100%;
+border-bottom: 5px solid rgb(79, 240, 79);
+}
+/* ////////////////////////////////////////////////// */
+h2 {
+    text-align: center;
+    color: #333;
+}
+.SubmissionContainer {
+    display: flex;
+}
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+}
+.right-section {
+    flex: 1;
+    padding-left: 20px;
+}
+.fieldset-container {
+    margin-bottom: 20px;
+}
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+legend {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

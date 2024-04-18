@@ -1,0 +1,55 @@
+<%- include('../layouts/header') %>
+<link rel="stylesheet" href="/css/global.css">
+<div class="GlobalContainer">
+    <div class="containerBrownGrey">
+        <div class="textLarge">
+            The Global Study Fair: Your exclusive online event
+        </div>
+    </div>
+    <div class="downContainer">
+        <img src="/images/global.png" alt="">
+
+        <div class="textGlobalContents">
+            <h2>University recruiters want to meet you!</h2>
+            <br><br>
+            <h6>
+                The Global Study Fair is an exclusive event that provides an opportunity for students from all over the world who are interested in studying abroad to connect and interact with international university representatives and get all the information they need to make their dreams come true.
+            </h6>
+            <p class="text-decor">The world-renowned Global Study Fair gives you the opportunity to:</p>
+            <ul class="text-decor">
+                <li>⭐️ Chat and ask questions to university representatives and student ambassadors to learn about programs and career opportunities.</li>
+                <li>⭐️ Watch live webinars to gather all the information you need.</li>
+                <li>⭐️ Browse university scholarship opportunities and get the chance to win a €3000 airfare to your study destination!</li>
+            </ul>
+        </div>
+
+        <div class="textClobal">
+            After attending the Global Study Fair, I had all the information I needed to research more purposefully about studying abroad.
+            - Chris Ntonis, Greece
+        </div>
+
+        <div class="formNewsletter">
+            <div class="newsletter">
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="m13 16 5-4-5-4v3H4v2h9z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg><h2>Sign up to our newsletter! </h2></div>
+                <div><p>Sign up to our newsletter to receive helpful information about study abroad programs, scholarships, and other opportunities!</p></div>
+                <form action="/newsletter/reg" method="POST" class="forms">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="agreedTerms" name="agreedTerms" required>
+                        <label for="agreedTerms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+                    </div>
+                    <button class="newbut" type="submit">Sign Me Up</button>
+                </form>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer') %>

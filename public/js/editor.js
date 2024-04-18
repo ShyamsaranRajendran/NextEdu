@@ -32,6 +32,12 @@ $('textarea#intro').each(function() {
 $('textarea#admissions').each(function() {
    CKEDITOR.replace($(this).attr('id'));
 });
+$('textarea#content').each(function() {
+   CKEDITOR.replace($(this).attr('id'));
+});
+$('textarea#desc').each(function() {
+   CKEDITOR.replace($(this).attr('id'));
+});
 
    if ($("data-fancybox").length) {
        $("data-fancybox").fancybox();

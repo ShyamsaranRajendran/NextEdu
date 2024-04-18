@@ -3,13 +3,15 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const User  = require('../../models/user.js');
-
+var Program = require('../../models/programs.js');
 
 // Route to register page
 router.get('/register', async function(req, res) {
     try {
+        const programs = await Program.find();
         res.render('entry/register', {
-            title: 'Register'
+            title: 'Register',
+            programs:programs
         });
     } catch (error) {
         console.error('Error rendering registration page:', error);
@@ -17,22 +19,23 @@ router.get('/register', async function(req, res) {
     }
 });
 
-// Route to handle user registration
+const Recommendation = require('../../models/recommondation.js'); // Import the Recommendation model
+
 router.post('/register', async function(req, res) {
     try {
-        const { name, email, username, password, confirm_password } = req.body;
+        const { name, email, username, password, confirm_password, college, second_college, place, second_place } = req.body;
 
         // Check if passwords match
         if (password !== confirm_password) {
             req.flash('error', 'Passwords do not match');
-            return res.redirect('/user/register');
+            return res.redirect('/usr/register');
         }
 
         // Check if username already exists in the database
         const existingUser = await User.findOne({ username: username });
         if (existingUser) {
             req.flash('error', 'Username already exists, choose another');
-            return res.redirect('/user/register');
+            return res.redirect('/usr/register');
         }
 
         // Hash the password
@@ -49,13 +52,23 @@ router.post('/register', async function(req, res) {
         });
         await newUser.save();
 
+        // Store recommendations
+        const newRecommendation = new Recommendation({
+            userId: newUser._id, // Assuming userId field in recommendation model
+            college: college,
+            secondCollege: second_college,
+            place: place,
+            secondPlace: second_place
+        });
+        await newRecommendation.save();
+
         // Flash message for successful registration
         req.flash('success', 'You are now registered');
-        res.redirect('/user/login');
+        res.redirect('/usr/login');
     } catch (error) {
         console.error('Error registering user:', error);
         req.flash('error', 'Internal Server Error');
-        res.redirect('/user/register');
+        res.redirect('/usr/register');
     }
 });
 
@@ -86,13 +99,15 @@ router.post('/login', function(req, res, next) {
             if (!user) {
                 // If user is not found, redirect to login page with error message
                 req.flash('error', 'Invalid username or password');
-                return res.redirect('/user/login');
+                return res.redirect('/usr/login');
             }
             req.logIn(user, function(err) {
                 if (err) {
                     console.error('Error logging in user:', err);
                     return next(err);
                 }
+                // Store the username in the session
+                req.session.username = user.username;
                 // If login is successful, redirect to home page
                 return res.redirect('/');
             });
@@ -105,6 +120,7 @@ router.post('/login', function(req, res, next) {
 
 
 
+
 router.get('/logout', async function(req, res) {
     try {
        req.logout(function(err) {
@@ -113,7 +129,7 @@ router.get('/logout', async function(req, res) {
                return res.status(500).send('Internal Server Error');
            }
            req.flash('success', 'You are logged out!');
-           res.redirect('/user/login');
+           res.redirect('/usr/login');
        });
     } catch (error) {
         console.error('Error rendering login page:', error);

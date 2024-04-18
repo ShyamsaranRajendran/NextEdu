@@ -159,37 +159,35 @@ router.post('/add-con-category', Storage.single('image'), [
       res.status(500).send('Internal Server Error');
   }
 });
-
-/*
-
 // Delete category
 router.get('/delete-category/:id', function(req, res) {
-  Category.findOneAndDelete({ _id: req.params.id })
-  .exec()
-  .then(deletedcategory => {
-      if (deletedcategory) {
-          Category.find({}).sort({ sorting: 1 }).exec() // Use Category.find() instead of category.find()
-          .then(categorys => {
-              res.app.locals.categorys = categorys;
-          })
-          .catch(err => {
-              console.error(err);
-              res.status(500).send('Internal Server Error');
-          });
-          req.flash('success', 'Category deleted');
-      } else {
-          req.flash('error', 'Category not found');
-      }
-      res.redirect('/admin/category');
-  })
-  .catch(err => {
-      console.error(err);
-      req.flash('error', 'Failed to delete category');
-      res.redirect('/admin/category');
-  });
+  Content_Category.findOneAndDelete({ _id: req.params.id })
+      .exec()
+      .then(deletedCategory => {
+          if (deletedCategory) {
+              Content_Category.find({}).sort({ sorting: 1 }).exec()
+                  .then(categorys => {
+                      res.app.locals.content_categorys = categorys;
+                      req.flash('success', 'Category deleted');
+                      res.redirect('/admin/category/content');
+                  })
+                  .catch(err => {
+                      console.error(err);
+                      req.flash('danger', 'Error retrieving categories.');
+                      res.redirect('/admin/category/content');
+                  });
+          } else {
+              req.flash('error', 'Category not found');
+              res.redirect('/admin/category/content');
+          }
+      })
+      .catch(err => {
+          console.error(err);
+          req.flash('error', 'Failed to delete category');
+          res.redirect('/admin/category/content');
+      });
 });
 
-*/
 
 // Exports
 module.exports = router;

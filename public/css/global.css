@@ -1,0 +1,133 @@
+.GlobalContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+}
+
+.containerBrownGrey {
+    height: auto;
+    padding: 4%;
+    background-color: rgb(255, 248, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    align-items: flex-start;
+    gap: 5%;
+}
+
+.textLarge {
+    font-size: 50px;
+    line-height: 1; 
+    font-weight: 800;
+    padding-left: 5%;
+    color: black;
+    text-align: center;
+}
+
+.downContainer {
+    padding: 5% 10% 5%;
+    background-color: rgb(223, 232, 240);
+    margin: 10%;
+}
+
+.textGlobalContents {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: 1 ;
+    margin-top:  3%;
+    padding: 3%;
+    max-width: 70%;
+    background-color: aliceblue;
+}
+
+.textGlobalContents h2 {
+    font-weight: 800;
+    font-size: 30px;
+    color: black;
+}
+
+.textGlobalContents h6 {
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+}
+
+.text-decor {
+    font-weight: 500;
+    font-size: 19px;
+    padding: 2% 2% 2%;
+    color: black;
+    list-style-type: none;
+    margin: 0;
+}
+
+.textClobal{
+    margin-top: 3%;
+    border-left: solid 2px black;
+    padding: 3% 3%;
+    max-width: 70%;
+    background-color: aliceblue;
+}
+
+.formNewsletter {
+    padding: 5%;
+    max-width: 70%;
+
+}
+
+
+.newsletter{
+    height:auto;
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top: solid 5px black;
+    background-color: aliceblue;
+}
+
+input[type="text"],
+input[type="email"]
+ {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(250, 251, 252);
+}
+
+
+.newbut {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsbut:hover {
+    background-color: #0056b3;
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.checkbx{
+    display: flex;
+   
+    align-items: center;
+}
+.checkbx >a{
+    color: red;
+    font-size: 16px;
+    font-weight: 400;
+}

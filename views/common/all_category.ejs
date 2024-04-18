@@ -3,63 +3,62 @@
 <div class="container-4">
     <div class="left-panel">
         <h2>Fields of Study</h2>
-        <ul class="field-list">
+        <ul class="field-list" id="fieldsOfStudy">
             <% categorys.forEach(function(category) { %>
-                            <li id="<%= category._id %> " class="<%= category.slug %> " ><%= category.txt1 %></li>
-                            <li id="<%= category._id %>" class="<%= category.slug %> " ><%= category.txt2 %></li>
-                            <li id="<%= category._id %>" class="<%= category.slug %> " ><%= category.txt3 %></li>
-                     
-            <% }); %>
+                <li id="<%= category._id %>" class="category" data-field="<%= category.slug %>"><%= category.txt1 %></li>
+                <li id="<%= category._id %>" class="category" data-field="<%= category.slug %>"><%= category.txt2 %></li>
+                <li id="<%= category._id %>" class="category" data-field="<%= category.slug %>"><%= category.txt3 %></li>
+          <% }); %>
         </ul>
         <button class="show-more">+ Show more fields</button>
         
         <h2>Study format</h2>
-<ul class="study-format-list field-list">
-    <li>On-Campus (63099)</li>
-    <li>Distance Learning (12733)</li>
-    <li>Blended (2577)</li>
-</ul>
-
-        <h2>Duration</h2>
-<ul class="duration-list field-list">
-    <li>3 years (15248)</li>
-    <li>1 year (14596)</li>
-    <li>2 years (12560)</li>
-</ul>
-
-<h2>Study pace</h2>
-<ul class="study-pace-list field-list">
-    <li>Full time (44156)</li>
-    <li>Part time (14420)</li>
-</ul>
-
-        <h2>Languages</h2>
-        <ul class="language-list field-list">
-            <li>English (69734)</li>
-            <li>Spanish (4308)</li>
-            <li>French (974)</li>
-            <li>Portuguese (953)</li>
-            <li>Italian (637)</li>
+        <ul class="study-format-list field-list" id="studyFormats">
+            <li class="format" data-format="On-Campus">On-Campus (63099)</li>
+            <li class="format" data-format="Distance Learning">Distance Learning (12733)</li>
+            <li class="format" data-format="Blended">Blended (2577)</li>
         </ul>
-
+    
+        <h2>Duration</h2>
+        <ul class="duration-list field-list" id="durations">
+            <li class="duration" data-duration="3 years">3 years (15248)</li>
+            <li class="duration" data-duration="1 year">1 year (14596)</li>
+            <li class="duration" data-duration="2 years">2 years (12560)</li>
+        </ul>
+    
+        <h2>Study pace</h2>
+        <ul class="study-pace-list field-list" id="studyPaces">
+            <li class="pace" data-pace="Full time">Full time (44156)</li>
+            <li class="pace" data-pace="Part time">Part time (14420)</li>
+        </ul>
+    
+        <h2>Languages</h2>
+        <ul class="language-list field-list" id="languages">
+            <li class="language" data-language="English">English (69734)</li>
+            <li class="language" data-language="Spanish">Spanish (4308)</li>
+            <li class="language" data-language="French">French (974)</li>
+            <li class="language" data-language="Portuguese">Portuguese (953)</li>
+            <li class="language" data-language="Italian">Italian (637)</li>
+        </ul>
     </div>
+    
     
     <div class="right-panel">
         <div class="section">
             <div>
                 <h2>5774 Degrees in Engineering Studies 2024</h2>
             </div>
-            <div class="list">
+            <!-- <div class="list">
                 <div>Related</div>
                  <button><i class="arrow left">&lt;</i></button>
                 <% categorys.forEach(function(category) { %>
                     <a href="/<%= category.slug %>" id="<%= category._id %>"><button id="<%= category._id %>"><%= category.title %></button></a>
                 <% }); %>
                 <button><i class="arrow right">&gt;</i></button>
-            </div>
+            </div> -->
             
             <div class="recommendation">
-                <a href="#">Recommend</a>
+                <a href="/recommend">Recommend</a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     style="fill: rgba(0, 0, 0, 1);">
                     <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z">
@@ -72,16 +71,20 @@
                 </svg>
             </div>
             <div class="outer-box">
-            <% content_categorys.forEach(function(des)  { %>
+            <% content_categorys.forEach(function(des,index)  { %>
     <div class="box-container-1">
         <br><br>
-        <div class="boxs-s">
+        
+        <div class="boxs-s ">
             <div class="box1">
                 <img src="/<%= des.image %>" alt="">
             </div>
             <div class="box2">
                 <div>
-                    <p style="font-size: medium;font-weight:800"><%= des.university %></p>
+                    <p id="content_<%= index %>" style="font-size: medium;font-weight:800"><%= des.university %></p>
+                    <a href="/community"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3.33A1.67 1.67 0 1 1 10.33 7 1.67 1.67 0 0 1 12 5.33zm3.33 12.5-1.66.84-1.39-3.89h-.56l-1.39 3.89-1.66-.84 1.66-4.72v-1.66L7 10.33l.56-1.66 3.33 1.11h2.22l3.33-1.11.56 1.66-3.33 1.12v1.66z"></path></svg></a>
+                     <div style="margin-left: 30px;"></div>
+                    <button  style="border: none; border-radius: 5px;"id="pronounceBtn" onclick="speakText('<%= des.university %>')"><svg id="speaksvg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="m7.727 6.313-4.02-4.02-1.414 1.414 18 18 1.414-1.414-2.02-2.02A9.578 9.578 0 0 0 21.999 12c0-4.091-2.472-7.453-5.999-9v2c2.387 1.386 3.999 4.047 3.999 7a8.13 8.13 0 0 1-1.671 4.914l-1.286-1.286C17.644 14.536 18 13.19 18 12c0-1.771-.775-3.9-2-5v7.586l-2-2V2.132L7.727 6.313zM4 17h2.697L14 21.868v-3.747L3.102 7.223A1.995 1.995 0 0 0 2 9v6c0 1.103.897 2 2 2z"></path></svg></button>
                 </div>
                 <div>
                     <p style="font-size:24px; font-weight: bold;"><%= des.programs %></p>
@@ -158,7 +161,7 @@
             </div>
         </div>
     </div>
-<% }) %>
+<% index++ ; }) %>
             </div>
         
         </div>

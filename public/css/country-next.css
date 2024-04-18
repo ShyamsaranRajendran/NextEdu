@@ -1,0 +1,172 @@
+/* Scholarship container styles */
+.scholarship-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 4%;
+}
+
+.scholarship-image {
+    width: 45%;
+    max-width: 400px;
+    margin-right: 20px;
+}
+
+.scholarship-info {
+    width: 80%;
+}
+
+.scholarship-title {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.scholarship-description {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.scholarship-date {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Newsletter form styles */
+.formNewsletter {
+    padding: 20px;
+}
+
+.newsletter {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.newsletter h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.forms {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+}
+
+.newbut {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newbut:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.sch-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute boxes evenly */
+    width: 100%; /* Ensure full width */
+   
+}
+
+.box-sch {
+    width: calc(25% - 20px); /* Adjust width to fit 4 boxes per row */
+    margin-bottom: 20px; /* Add margin between rows */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.box-sch img {
+    width: 190px;
+    height: 250px;
+    display: block; /* Remove extra space below image */
+    margin: auto; /* Center the image horizontally */
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.content {
+    padding: 10px; /* Add padding for content */
+    color: #3b3939;
+
+}
+
+.content h2 {
+    margin: 0 0 5px; /* Adjust margin for better spacing */
+    font-size: 18px; /* Adjust font size */
+    color: #3b3939;
+
+}
+
+.content p {
+    margin: 0 0 10px; /* Adjust margin for better spacing */
+    font-size: 14px; /* Adjust font size */
+    color: #3b3939;
+
+}
+
+.data {
+    font-style: italic; /* Italicize the data */
+    color: #3b3939;
+
+}
+
+
+.read-more:hover {
+    background-color: #2980b9; /* Change background color on hover */
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.read-data{
+    color: skyblue;
+}
+.read-data:hover{
+    color: #3498db;
+}
+

@@ -1,0 +1,125 @@
+<%- include('../layouts/header') %>
+<link rel="stylesheet" href="/css/all-category.css">
+<div class="container-4">
+  
+    <div class="right-panel">
+        <div class="section">
+            <div>
+                <h2>5774 Degrees in Engineering Studies 2024</h2>
+            </div>
+        
+            
+            <div class="recommendation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill: rgba(0, 0, 0, 1);">
+                    <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z">
+                    </path>
+                </svg>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill: rgba(0, 0, 0, 1);">
+                    <path d="m18.707 12.707-1.414-1.414L13 15.586V6h-2v9.586l-4.293-4.293-1.414 1.414L12 19.414z">
+                    </path>
+                </svg>
+            </div>
+            <div class="outer-box">
+            <% contentCategories.forEach(function(des,index)  { %>
+    <div class="box-container-1">
+        <br><br>
+        <div class="boxs-s ">
+            <div class="box1">
+                <img src="/<%= des.image %>" alt="">
+            </div>
+            <div class="box2">
+                <div>
+                    <p id="content_<%= index %>" style="font-size: medium;font-weight:800"><%= des.university %></p>
+                    <a href="/community"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3.33A1.67 1.67 0 1 1 10.33 7 1.67 1.67 0 0 1 12 5.33zm3.33 12.5-1.66.84-1.39-3.89h-.56l-1.39 3.89-1.66-.84 1.66-4.72v-1.66L7 10.33l.56-1.66 3.33 1.11h2.22l3.33-1.11.56 1.66-3.33 1.12v1.66z"></path></svg></a>
+                
+                    <button  style="border: none; border-radius: 5px;"id="pronounceBtn" onclick="speakText('<%= des.university %>')"><svg id="speaksvg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="m7.727 6.313-4.02-4.02-1.414 1.414 18 18 1.414-1.414-2.02-2.02A9.578 9.578 0 0 0 21.999 12c0-4.091-2.472-7.453-5.999-9v2c2.387 1.386 3.999 4.047 3.999 7a8.13 8.13 0 0 1-1.671 4.914l-1.286-1.286C17.644 14.536 18 13.19 18 12c0-1.771-.775-3.9-2-5v7.586l-2-2V2.132L7.727 6.313zM4 17h2.697L14 21.868v-3.747L3.102 7.223A1.995 1.995 0 0 0 2 9v6c0 1.103.897 2 2 2z"></path></svg></button>
+                </div>
+                <div>
+                    <p style="font-size:24px; font-weight: bold;"><%= des.programs %></p>
+                </div>
+                <div>
+                    <p style="padding-left: 3%;"><%=  des.location %></p>
+                </div>
+                <div class="location">
+                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path d="M2 7v1l11 4 9-4V7L11 4z"></path>
+                            <path
+                                d="M4 11v4.267c0 1.621 4.001 3.893 9 3.734 4-.126 6.586-1.972 7-3.467.024-.089.037-.178.037-.268V11L13 14l-5-1.667v3.213l-1-.364V12l-3-1z">
+                            </path>
+                        </svg></div>
+                    <div>
+                        <p><%= des.degree %></p>
+                    </div>
+                    <div class="circle"></div>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1)">
+                            <path
+                                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z">
+                            </path>
+                            <path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"></path>
+                        </svg></div>
+                    <div>
+                        <p><%= des.schedule %></p>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z">
+                            </path>
+                            <path
+                                d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div><%= des.duration %></div>
+                    <div class="circle"></div>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1);">
+                            <path
+                                d="M20 3H7c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h6c1.103 0 2-.897 2-2h8c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM9.997 19H4V9h6l-.003 10zm10-2H12V9c0-1.103-.897-2-2-2H7V5h13l-.003 12z">
+                            </path>
+                        </svg></div>
+                    <div>
+                        <% if (des.mode == 'Offline') { %>
+                            <p>Off-Campus</p>
+                        <% } else { %>
+                            <p>On-Campus</p>
+                        <% } %>
+                    </div>
+                    <div class="circle"></div>
+                    <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            style="fill: rgba(0, 0, 0, 1)">
+                            <path
+                                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM4 12c0-.899.156-1.762.431-2.569L6 11l2 2v2l2 2 1 1v1.931C7.061 19.436 4 16.072 4 12zm14.33 4.873C17.677 16.347 16.687 16 16 16v-1a2 2 0 0 0-2-2h-4v-3a2 2 0 0 0 2-2V7h1a2 2 0 0 0 2-2v-.411C17.928 5.778 20 8.65 20 12a7.947 7.947 0 0 1-1.67 4.873z">
+                            </path>
+                        </svg></div>
+                    <div>
+                        <p><%= des.language %></p>
+                    </div>
+                </div>
+                <div class="description">
+                    <div>
+                        <p style="font-size: small;"><%- des.description %></p>
+                    </div>
+                    <div><a style="color: red; font-size: smaller; z-index: 1;"
+                        href="/category/details/<%= des._id %>">Read more</a>                 
+                           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% index++ ; }) %>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+<br><br>
+<script src="/js/filter.js"></script>
+<%- include('../layouts/footer') %>

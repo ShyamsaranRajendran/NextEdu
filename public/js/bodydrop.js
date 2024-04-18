@@ -1,5 +1,9 @@
 console.log("Script file loaded!");
 
+function changePlaceholder(inputId, placeholderText) {
+    document.getElementById(inputId).placeholder = placeholderText;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const studyInput = document.getElementById("studyInput");
     const placeInput = document.getElementById("placeInput");

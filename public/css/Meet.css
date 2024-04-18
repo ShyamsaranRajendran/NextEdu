@@ -1,0 +1,101 @@
+.parr-1{
+    padding: 0;
+    margin: 0;
+    font-family:cursive
+
+}
+.par{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+.background-container {
+    background-image: url('/images/backMeet.png'); /* Replace 'your-image.jpg' with the path to your image */
+    background-size: cover; /* Cover the entire container with the background image */
+    background-position: center; /* Center the background image */
+   /* Set maximum width to 100% */
+    height: 50vh; /* Set height to 200px */
+   
+    
+    display: flex;  
+    flex-direction: column;
+    padding: 100px;
+    padding-bottom: 0px;
+    padding-top: 70px;
+    align-items: left;
+    gap: 50px;
+    
+
+}
+.scheduleform{
+    border: 1px solid gray;
+    border-radius: 10px;
+    max-width: 50%;
+    padding: 5%;
+    margin-left: 10%;
+}
+
+.background-container .head{
+    max-width: 40%;
+    
+    font-size: 30px;
+    color: whitesmoke;
+}
+.background-container .cont{
+    max-width: 50%;
+    color: whitesmoke;
+    font-size: large;
+    
+    
+}
+button{
+    border: none;
+    background-color: rgb(70, 70, 239);
+    color:white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.forms{
+   
+    justify-content: center;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"]
+ {
+    width: 100%;
+    padding: 15px 0px;
+    padding-left: 5px;
+    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.newbut {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsbut:hover {
+    background-color: #0056b3;
+}
+.checkbx >a{
+    color: red;
+    font-size: 15px;
+    font-weight: 400;
+}

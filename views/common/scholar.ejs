@@ -1,0 +1,67 @@
+<%- include('../layouts/header') %>
+
+<link rel="stylesheet" href="/css/scholar.css">
+
+<div class="scholarship-container">
+    <img src="/<%= scholarship1.image %>" alt="Scholarship Image" class="scholarship-image">
+    <div class="scholarship-info">
+      <h2 class="scholarship-title"><%- scholarship1.title %></h2>
+      <p class="scholarship-description"><%- scholarship1.desc %></p>
+      <p class="scholarship-date">Posted on: <%= scholarship1.time %></p>
+    
+      <br><br>
+      <br><br>
+    </div>
+
+    <div class="sch-cards">
+
+      <% scholarship.forEach(function(scholar) { %>
+      <div class="box-sch">
+          <img src="/<%= scholar.image %>" alt="Image Description">
+          <div class="content">
+              <h2><%= scholar.title %></h2>
+              <br><br>
+             <div class="data">
+                  <div class="txt-data">
+                      <%= scholar.time %>
+                  </div>
+                  <div class="read-data">
+                      <a href="/scholar/<%= scholar._id %>">Read-More</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <% }) %>            
+      
+  </div>
+
+  <br><br><br><br>
+  <div class="formNewsletter">
+    <div class="newsletter">
+        <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1)"><path d="m13 16 5-4-5-4v3H4v2h9z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg><h2>Sign up to our newsletter! </h2></div>
+        <div><p>Sign up to our newsletter to receive helpful information about study abroad programs,countrys, and other opportunities!</p></div>
+        <form action="/newsletter/reg" method="POST" class="forms">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="agreedTerms" name="agreedTerms" required>
+                <label for="agreedTerms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</label>
+            </div>
+            <button class="newbut" type="submit">Sign Me Up</button>
+        </form>                
+    </div>
+</div>
+
+
+  </div>
+
+
+
+
+<%- include('../layouts/footer') %>

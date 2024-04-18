@@ -1,0 +1,29 @@
+<%- include('../layouts/header') %>
+
+<link rel="stylesheet" href="/css/donation.css">
+<div class="frm-container">
+<form action="/submit-donation" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your email" required>
+
+    <label for="amount">Donation Amount:</label>
+    <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+
+    <label for="currency">Currency:</label>
+    <select id="currency" name="currency" required>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <!-- Add more currency options as needed -->
+    </select>
+
+    <label for="message">Message (Optional):</label>
+    <textarea id="message" name="message" placeholder="Your message"></textarea>
+
+    <input type="submit" value="Donate">
+</form>
+</div>
+<%- include('../layouts/footer') %>

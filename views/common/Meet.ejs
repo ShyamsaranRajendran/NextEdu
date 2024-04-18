@@ -1,0 +1,51 @@
+<%- include('../layouts/header') %>
+
+<link rel="stylesheet" href="/css/Meet.css">
+<div class="parr-1">
+    <div class="par">
+        <div class="background-container">
+            <div class="head">Community Guide:
+                Empowering Collective Navigation</div>
+            <div class="cont">Encapsulates the essence of unified progression within a community. It portrays a collaborative effort where individuals, bound by common goals, navigate through challenges and opportunities together</div>
+            <div><button onclick="formdisp()">Get Schedule Time</button></div>
+        </div>
+        <div id="formd" class="scheduleform" style="display: none;">
+            <div>
+        <form action="#" method="POST" class="forms">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="number" id="phone" name="phoneno" placeholder="Your Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="name">DOB</label>
+                <input type="date" id="dob" name="dob" placeholder="Your Date of Birth" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Address</label>
+                <input type="text" id="address" name="address" placeholder="Your Address" required>
+            </div>
+            <div class="checkbx"><input type="checkbox" name="" id="">I agree to the <a href=""> Terms and Conditions </a>and <a href=""> Privacy Policy</a>.</div>
+            <button class="newbut" type="submit">Sign Me Up</button>
+        </form>
+        
+    </div>
+    </div>
+    </div>
+    <script>
+        function formdisp(){
+            let a=document.getElementById("formd");
+            a.style.display="block";
+        }
+    </script>
+</div>
+
+
+<%- include('../layouts/footer') %>

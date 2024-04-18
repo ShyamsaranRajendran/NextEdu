@@ -48,12 +48,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// Passport Config
-//require('./config/passport')(passport);
 
-// Passport Middleware
+//Passport Middleware
+app.use(passport.initialize());
+app.use(function(req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+//Passport Config
+require('./config/passport')(passport);
+//Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Global variables middleware
 app.use((req, res, next) => {
@@ -70,7 +78,11 @@ const adminScholarshipRouter = require('./routes/adminRouter/admin_scholarship')
 const adminCountryRouter = require('./routes/adminRouter/admin_country');
 const users = require('./routes/viewsRouter/user');
 const adminContentCategory = require('./routes/adminRouter/admin_con_category');
-
+const adminNewsletterRouter = require('./routes/adminRouter/admin_newsletter');
+const scholar = require('./routes/viewsRouter/scholar');
+const country = require('./routes/viewsRouter/country');
+const community = require('./routes/viewsRouter/community');
+const recommend = require('./routes/viewsRouter/Recommend')
 
 // Use routers as middleware
 
@@ -80,8 +92,12 @@ app.use('/admin/category', admincategoryRouter);
 app.use('/admin/scholarships', adminScholarshipRouter);
 app.use('/admin/countries', adminCountryRouter);
 app.use('/admin/category/content', adminContentCategory);
-
-app.use('/user', users);
+app.use('/newsletter', adminNewsletterRouter);
+app.use('/usr', users);
+app.use('/scholar', scholar);
+app.use('/country', country);
+app.use('/community', community);
+app.use('/recommend', recommend);
 
 // Set port
 const port = process.env.PORT || 4000;

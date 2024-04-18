@@ -35,9 +35,7 @@ router.get('/add-Program', function(req, res) {
 });
 
 // Post add-Program
-router.post('/add-program', [
-    check('title', 'Title must not be empty').not().isEmpty()
-  ], function(req, res) {
+router.post('/add-program', function(req, res) {
     const errors = validationResult(req);
   
     if (!errors.isEmpty()) {

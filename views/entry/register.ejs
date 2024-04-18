@@ -1,61 +1,71 @@
 <!-- Removed include statements for header and footer -->
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
+    body{
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
+        justify-content: center;
+        gap: 5px;
+        width: 80%;
     }
+   /* Form styles */
+.form-group {
+    margin-bottom: 20px;
+}
 
-    form {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 300px;
-    }
+label {
+    font-weight: bold;
+    display: block;
+}
 
-    .form-group {
-        margin-bottom: 20px;
-    }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px; /* Adjust font size as needed */
+}
 
-    label {
-        font-weight: bold;
-    }
+select {
+    appearance: none; /* Remove default select arrow */
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Adjust position as needed */
+    padding-right: 30px; /* Adjust padding to accommodate the arrow */
+    cursor: pointer;
+}
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+select:focus {
+    outline: none;
+    border-color: #007bff; /* Change border color on focus */
+}
 
-    button[type="submit"] {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+    transition: background-color 0.3s;
+}
 
-    button[type="submit"]:hover {
-        background-color: #0056b3;
-    }
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
 </style>
 
 <h1>Registration Form</h1>
 
-<form method="post" action="/user/register">
+<form method="post" action="/usr/register">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -75,6 +85,58 @@
     <div class="form-group">
         <label for="confirm_password">Confirm Password</label>
         <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+    </div>
+    
+    <!-- College Selection -->
+    <div class="form-group">
+        <label for="college">College</label>
+        <select id="college" name="college" required>
+            <option value="" disabled selected>Select your college</option>
+            <% programs.forEach(function(program) { %>
+                <% if(program.title != null) { %>
+                    <option value="<%= program.title %>"><%= program.title %></option>
+                <% } %>
+            <% }); %>
+        </select>
+    </div>
+    
+    <!-- Second College Selection -->
+    <div class="form-group">
+        <label for="college">Second College</label>
+        <select id="second_college" name="second_college" required>
+            <option value="" disabled selected>Select your second college</option>
+            <% programs.forEach(function(program) { %>
+                <% if(program.title != null) { %>
+                    <option value="<%= program.title %>"><%= program.title %></option>
+                <% } %>
+            <% }); %>
+        </select>
+    </div>
+
+    <!-- Place Selection -->
+    <div class="form-group">
+        <label for="place">Place</label>
+        <select id="place" name="place" required>
+            <option value="" disabled selected>Select your place</option>
+            <% programs.forEach(function(program) { %>
+                <% if(program.place != null) { %>
+                    <option value="<%= program.place %>"><%= program.place %></option>
+                <% } %>
+            <% }); %>
+        </select>
+    </div>
+    
+    <!-- Second Place Selection -->
+    <div class="form-group">
+        <label for="second_place">Second Place</label>
+        <select id="second_place" name="second_place" required>
+            <option value="" disabled selected>Select your second place</option>
+            <% programs.forEach(function(program) { %>
+                <% if(program.place != null) { %>
+                    <option value="<%= program.place %>"><%= program.place %></option>
+                <% } %>
+            <% }); %>
+        </select>
     </div>
     
     <button type="submit">Register</button>

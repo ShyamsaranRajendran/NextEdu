@@ -40,74 +40,55 @@ body {
 .custom-dropdown {
     position: relative;
     display: inline-block;
+ 
+  
 }
 
-.custom-dropdown-btn {
-    background-color: #f8f9fa;
+.custom-dropdown-select {
+    padding: 16px 24px;
+    border: 2px solid #ccc;
+    background-color: #fff;
     color: #333;
-    padding: 20px;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    border: none; 
+    font-size: medium;
+    border-radius: 20px;
 }
-.custom-dropdown-btn input{
-    border: none; 
 
-}
-.custom-dropdown-btn input:focus{
-outline: none;
-}
-.custom-icon {
-    margin-right: 5px;
+.custom-dropdown-select:hover {
+    background-color: #f4f4f4;
+    font-size: medium;
 }
 
 .custom-dropdown-content {
     display: none;
     position: absolute;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1;
-    width: calc(100% - 2px);
-    overflow-y: auto;
-    max-height: 200px;
+    min-width: 160px;
+    font-size: medium;
 }
 
 .custom-dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
     color: #333;
-    border-bottom: 1px solid #ccc;
-}
-
-.custom-dropdown-content a:last-child {
-    border-bottom: none;
+    text-decoration: none;
+    display: block;
+    padding: 16px 24px;
+    font-size: medium;
 }
 
 .custom-dropdown-content a:hover {
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
+    font-size: medium;
 }
-
-.custom-dropdown:hover .custom-dropdown-content {
-    display: block;
-}
-
-.search button {
+.search {
     width: auto;
     height: 50px;
     padding: 5px 20px;
     border-radius: 25px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+  
+    background-color: rgb(214, 83, 83);
     color: black;
     font-weight: bold;
     font-size: 16px;
@@ -115,8 +96,8 @@ outline: none;
     cursor: pointer;
 }
 
-.search button {
-    background-color: rgb(216, 81, 104);
+.search  {
+    background-color: rgb(117, 226, 27);
     color: white;
 }
 
@@ -374,3 +355,5 @@ outline: none;
 .read-data:hover{
     color: #3498db;
 }
+
+

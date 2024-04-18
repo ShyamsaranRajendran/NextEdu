@@ -19,35 +19,34 @@
         </div>
         
         <div class="boxs">
-            <div class="custom-dropdown">
-                <button class="custom-dropdown-btn" id="studyDropdownBtn">
-                    <span class="custom-icon">&#128269;</span> <!-- Search icon -->
-                    <input type="text" id="studyInput" placeholder="What do you want to study">
-                    <span>&#9660;</span>
-                </button>
-                <div class="custom-dropdown-content" id="studyDropdownContent">
-                    <% programs.forEach(function(program) { %>
-                        <a href="#"><%= program.title %></a>
-                    <% }); %>
+            <form id="searchForm" action="/searcher" method="get">
+                <div class="custom-dropdown">
+                    <select id="studyDropdownSelect" name="studyDropdownSelect" class="custom-dropdown-select">
+                        <option value="Select what to study" selected>Select what to study</option>
+                        <% programs.forEach(function(program) { %>
+                            <% if(program.title != null) { %>
+                                <option value="<%= program.title %>"><%= program.title %></option>
+                            <% } %>
+                        <% }); %>
+                    </select>
                 </div>
-            </div>
-        
-            <div class="custom-dropdown">
-                <button class="custom-dropdown-btn" id="placeDropdownBtn">
-                    <span class="custom-icon">&#128269;</span> <!-- Search icon -->
-                    <input type="text" id="placeInput" placeholder="Where do you want to study">
-                    <span>&#9660;</span>
-                </button>
-                <div class="custom-dropdown-content" id="placeDropdownContent">
-                    <% programs.forEach(function(program) { %>
-                        <a href="#"><%= program.place %></a>
-                    <% }); %>
+                
+                <div class="custom-dropdown">
+                    <select id="placeDropdownSelect" name="placeDropdownSelect" class="custom-dropdown-select">
+                        <option value="Select where to study" selected>Select where to study</option>
+                        <% programs.forEach(function(program) { %>
+                            <% if(program.place != null) { %>
+                                <option value="<%= program.place %>"><%= program.place %></option>
+                            <% } %>
+                        <% }); %>
+                    </select>
                 </div>
-            </div>
-        
-            <div class="search">
-                <button id="searchButton">Search</button>
-            </div>
+            
+                
+                    <button type="submit" class="search" id="searchButton" >Search</button>
+            
+            </form>
+            
             <script src="js/bodydrop.js"></script>
         </div>
         
@@ -70,7 +69,9 @@
         <div class="card-container">
             <% categorys.forEach(function(category) { %>
                 <% if(category.front==1)  { %>
+                   
                 <div class="card">
+                    <a href="/all-category">
                     <div class="card-content">
                         <h2 class="card-title"><%= category.title %></h2>
                         <p class="card-description"><%= category.txt1 %></p>
@@ -80,8 +81,9 @@
                         <div class="additional-info">
                             <!-- Add content here -->
                         </div>
-                    </div>
+                    </div></a>
                 </div>
+    
                 <% } %>
             <% }) %>
         </div>
@@ -97,7 +99,7 @@
                 Scholarships for international students
             </div>
             <div>
-                <button class="cat-btn">View all</button>
+                <a href="/scholarship"><button class="cat-btn">View all</button></a>
             </div>
         </div>
     
@@ -117,7 +119,7 @@
                             <%= scholar.time %>
                         </div>
                         <div class="read-data">
-                            Read-More
+                            <a href="/scholar/<%= scholar._id %>">Read-More</a>
                         </div>
                     </div>
                 </div>
@@ -153,7 +155,7 @@
                                 <%= con.time %>
                             </div>
                             <div class="read-data">
-                                Read-More
+                               <a href="/country/<%= con._id %>"> Read-More</a>
                             </div>
                         </div>
                     </div>

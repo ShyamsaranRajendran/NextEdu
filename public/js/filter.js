@@ -1,24 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
 
-    // Function to send a POST request when a list item is clicked
-    function sendPostRequest(fieldOfStudy) {
-        // Send a POST request
-        fetch('your_post_endpoint', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ fieldOfStudy: fieldOfStudy })
-        })
-        .then(response => {
-            // Handle response here if needed
-            console.log('POST request successful');
-        })
-        .catch(error => {
-            // Handle error here if needed
-            console.error('Error:', error);
-        });
+
+function speakText(text) {
+    if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        
+        utterance.lang = 'en-US'; // Set the language to English (United States)
+        utterance.pitch = 1; // Set the pitch (0 to 2, default is 1)
+        
+        // Speak the provided text
+        window.speechSynthesis.speak(utterance);
+    } else {
+        // Speech synthesis not supported, provide fallback or error handling
+        console.error('Speech synthesis not supported by this browser.');
     }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
 
     // Get all list items
     var listItems = document.querySelectorAll('.field-list li');
@@ -103,3 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+
+
+
+
